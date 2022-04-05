@@ -46,16 +46,21 @@ public class Monster{
    
    public boolean getAlive(){
    
-      return alive;
+      return health > 0;
    }
    
-   public int checkAlive(int h){
+   public void checkAlive(int h){
      //error Right here. Won't allow for return inside here. 
       int health = h;
-     if(health <= 0){
-          System.out.println("Game over");
-         System.out.println("Continue?");
+      if(health <= 0){
+         System.out.println("Monster is dead");
+         //Once We code Monster activities we need to figure out
+         //how to stop its actions. Otherwise monster will keep attacking.
+         //Maybe in the default switch statement if monsters health is zero.
+         //It stops it. Then it asks you for new areas that you can travel too.
+       
       }
+     
    }
 
 }
