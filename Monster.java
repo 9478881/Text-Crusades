@@ -37,10 +37,8 @@ public class Monster{
       return damage;
    }
    
-   public int takeDamage(int t){
-   
-      int takeDamage = t;
-     return health = health - damage;
+   public void takeDamage(int t){;
+     this.health = health -t;
    }
    
    
