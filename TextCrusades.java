@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class TextCrusades{
    public static void main(String[] args){
       
@@ -9,6 +8,7 @@ public class TextCrusades{
       String weapon;
       //intro to story
       try{
+         /*
          Thread.sleep(1500); //Delay. Time in milliseconds 
          System.out.printf("It was a beautiful morning... %n");
          Thread.sleep(1500);
@@ -61,7 +61,7 @@ public class TextCrusades{
          Thread.sleep(1000);
          System.out.printf("%n%n%n%n");
          System.out.printf("Enter your User name: ");
-         String userName = input.nextLine();
+         name = input.nextLine();
          
          Thread.sleep(800);
          System.out.printf("%n%n%n%n");
@@ -71,8 +71,8 @@ public class TextCrusades{
          System.out.printf("%n%n%n%n");
          
          System.out.println("And you quest starts, You arm yourself up with...");
-         boolean weaponSelected = false;
-   String selection;
+         */boolean Select = false;
+         String selection;/*    
          do{weaponChoice();
          
          
@@ -81,29 +81,28 @@ public class TextCrusades{
          switch (selection){
             case "1":
                weapon = "Iron Sword";
-               weaponSelected = true;
+               Select = true;
                break;
             case "2":
                weapon = "Fists";
-               weaponSelected = true;
+               Select = true;
                break;
             case "3":
                weapon = "Sandwich";
-               weaponSelected = true;
+               Select = true;
                break;
             case "4":
                weapon = "AK-47";
-               weaponSelected = true;
+               Select = true;
                break;
             default:
                System.out.printf("Please select a valid input%n%n");
                break;
           }    
-         }while (weaponSelected != true);         
-          
+         }while (Select != true);         
          System.out.printf("%n... Amazing choice!%n");   
          Thread.sleep(800);
-         System.out.printf("%nNow you step towards the drawbridge, ready to go on in your adventure to find the princess.%nEveryone depends on you, so you better not fail them.");
+         System.out.printf("%nNow you step towards the drawbridge, ready to go on in your adventure to find the queen.%nEveryone depends on you, so you better not fail them.");
          Thread.sleep(3500);
          System.out.printf("%n%n%nlooser%n%n");
          Thread.sleep(1000);
@@ -128,8 +127,48 @@ public class TextCrusades{
          System.out.printf(" options underneath the stats. Press your keyboard buttons (1,2,3,4) that%n"); 
          System.out.printf(" corresponds to each option to select them.%n Good Luck!");
          System.out.printf("%n========================================================================%n");                    
+         Thread.sleep(5000);
+         //fight
+         battle("easy", "Goblin");
+         */
+         Thread.sleep(100);
+         System.out.printf("%n%nYou defeated the goblin. He is now dead. You continue walking down the forest %n");
+         System.out.printf("and you stumble upon two different paths. One of the paths looks spooky and dark,%n");
+         System.out.printf("the other trail looks well kept. Which trail would you like to take?%n%n");
+         Thread.sleep(4000);
+         Select = false;
+         do{pathChoice();
+         selection = input.next();
+         switch (selection){
+            case "1":
+               Select = true;
+               break;
+            case "2":
+               Select = true;
+               break;
+            default:
+               System.out.printf("Please select a valid input%n%n");
+               break;
+          }    
+         }while (Select != true); 
          
-
+         
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         System.out.printf("");
+         
                                                                                           
                                                                                                                     
       }
@@ -144,6 +183,12 @@ public class TextCrusades{
       System.out.println("           >Fists........2         ");
       System.out.println("           >Sandwich.....3         ");
       System.out.println("           >AK-47........4         ");
+   }//end of weapon choice
+   
+   public static void pathChoice(){
+      System.out.println("         What path would you choose?");
+      System.out.println("           >Dark Path...1         ");
+      System.out.println("           >Nice Path...2         ");
    }
 }
 
