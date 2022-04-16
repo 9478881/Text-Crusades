@@ -167,8 +167,14 @@ public class TextCrusades{
          Thread.sleep(3000);
          //tutorial
          tutorial();                   
-         Thread.sleep(5000);
+         Thread.sleep(7000);
+         //public Player(String name, int health, int damage, int defense)
+         //Conveyor Conveyor1 = new Conveyor("flat belt", 0.9);
+         //public Monster( String n, int d, int de, int h)
+         Player player1 = new Player(name, 100, 20, 10);
+         Monster Monster1 = new Monster("Goblin", 30, 10, 50);
          //fight
+         combatMenu(player1, Monster1);
          
          
          Thread.sleep(100);
@@ -626,7 +632,7 @@ public class TextCrusades{
                   m.takeDamage(dealDamage);
                   System.out.printf("You attack the %s for %d damage!%n", m.getName(), dealDamage);
                   p.takeDamage(takenDamage);
-                  System.out.printf("the %s attack you for %d damage!%n", m.getName(), takenDamage);
+                  System.out.printf("the %s attacks you for %d damage!%n", m.getName(), takenDamage);
                   progressBattle = true;
                   break;
                   
@@ -657,8 +663,11 @@ public class TextCrusades{
           
       }while((m.getAlive() == true) && (p.getAlive() == true));
       
-      if(m.getAlive() == false){
-        System.out.printf("you Defeated the %s", m.getName());
+      if(m.getAlive() == false && p.getAlive() == true){
+        System.out.printf("You defeated the %s", m.getName());
+      }
+      else{
+      System.out.println("You died game over");
       }
    }    
 }
