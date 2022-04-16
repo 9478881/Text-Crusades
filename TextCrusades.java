@@ -110,7 +110,7 @@ public class TextCrusades{
          Thread.sleep(3500);
          System.out.printf("%n%nAnd BAM! It jumps at you.%n");
          Thread.sleep(1000);
-         System.out.printf("%nYou get scared but quickly realize… It's just a squirrel! As you sigh a breath of release. You hear a branch break%n");
+         System.out.printf("%nYou get scared but quickly realizeâ€¦ It's just a squirrel! As you sigh a breath of release. You hear a branch break%n");
          Thread.sleep(3500);
          System.out.printf("%nCRACK!%n");
          Thread.sleep(1000);
@@ -228,7 +228,7 @@ public class TextCrusades{
                      Thread.sleep(2500);
                      System.out.printf("%n%n[%s]: Alright, fine, here's my money.", name);
                      Thread.sleep(2500);
-                     System.out.printf("%n%n[Unkown man]: You stay the night, the Unkown-man snores throughout the night so you don’t get much sleep.");
+                     System.out.printf("%n%n[Unkown man]: You stay the night, the Unkown-man snores throughout the night so you donâ€™t get much sleep.");
                   }else{
                      Thread.sleep(3000);
                      System.out.printf("%n%n[%s]: How about you pay me, huh?", name);
@@ -293,7 +293,7 @@ public class TextCrusades{
             Thread.sleep(2000);
             System.out.printf("%n%nThey bring you food and birds sing for you");
             Thread.sleep(2000);
-            System.out.printf("%n%nThe sun starts to set, and you see the most beautiful sunset you’ve ever seen in your life.");
+            System.out.printf("%n%nThe sun starts to set, and you see the most beautiful sunset youâ€™ve ever seen in your life.");
             Thread.sleep(3250);
             System.out.printf("%n%n It's enough to make a grown man cry...");
             Thread.sleep(2000);
@@ -424,7 +424,76 @@ public class TextCrusades{
       System.out.println("          What do you want to do?");
       System.out.println("           >Tell him you don't have money...1       ");
       System.out.println("           >Tell him to pay you.............2       ");
-   }    
+   }
+   
+   
+   public static void combatMenu(Player p, Monster m){
+      Scanner action = new Scanner(System.in);
+      Random randBouns = new Random();
+      do{
+         System.out.printf("%-60s        %s%n", p.getName(), m.getName());
+         System.out.printf("%-60s_______________%n", "_______________");
+         System.out.printf("HP: %-58d      %2s %d%n", p.getHealth(), "HP:", m.getHealth());
+         System.out.printf("%-60s_______________%n", "_______________");
+         System.out.printf("DEF: %-58d     %2s %d%n", p.getDefense(), "DEF:", m.getDefense());
+         System.out.printf("%-60s_______________%n", "_______________");
+         System.out.printf("ATK: %-58d     %2s %d%n", p.getDamage(), "ATK:", m.getDamage());
+         System.out.printf("%n%n");
+         System.out.printf("___________________________________________________________________________%n");
+         System.out.printf("___________________________________________________________________________%n");
+         System.out.printf("%-34s %-34s %-34s%n", "ATTACK", "BLOCK", "HEAL");
+         System.out.printf("                            Enter 1 to ATTACK                              %n");
+         System.out.printf("                            Enter 2 to BLOCK                               %n");
+         System.out.printf("                            Enter 3 to HEAL                                %n");
+         
+         
+         
+         int dealDamage = p.getDamage() + (randBouns.nextInt(11) - 5);
+         int takenDamage = m.getDamage() + (randBouns.nextInt(11) - 5);
+         boolean progressBattle = false;
+         
+         do{
+            String battleChoice = action.nextLine();
+            switch (battleChoice){
+               case "1":
+                  m.takeDamage(dealDamage);
+                  System.out.printf("You attack the %s for %d damage!%n", m.getName(), dealDamage);
+                  p.takeDamage(takenDamage);
+                  System.out.printf("the %s attack you for %d damage!%n", m.getName(), takenDamage);
+                  progressBattle = true;
+                  break;
+                  
+               case "2":
+                  p.takeDamage(takenDamage - 5);
+                  System.out.printf("You defend from the %s's attack!%n", m.getName());
+                  progressBattle = true;
+                  break;
+                  
+               case "3":
+                  p.heal(5 + (randBouns.nextInt(11) - 5));
+                  System.out.printf("You heal yourself%n");
+                  p.takeDamage(takenDamage);
+                  System.out.printf("the %s attack you for %d damage!%n", m.getName(), takenDamage);
+                  progressBattle = true;
+                  break;
+                  
+               default:
+                  System.out.printf("Enter correct input...%n");
+                  break;
+            }
+          }while(progressBattle == false);
+          
+          System.out.printf("%n%n");
+          p.checkAlive();
+          m.checkAlive();
+          System.out.println(m.getAlive() + " " + p.getAlive());
+          
+      }while((m.getAlive() == true) && (p.getAlive() == true));
+      
+      if(m.getAlive() == false){
+        System.out.printf("you Deafeated the %s", m.getName());
+      }
+   }
    
 }
 
