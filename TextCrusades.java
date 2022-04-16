@@ -4,8 +4,8 @@ public class TextCrusades{
    public static void main(String[] args){
       
       Scanner input = new Scanner(System.in);
-      String name;
-      String weapon;
+      String name = "Bob";
+      String weapon = "AK-47";
       //intro to story
       try{
          /*
@@ -110,7 +110,7 @@ public class TextCrusades{
          Thread.sleep(3500);
          System.out.printf("%n%nAnd BAM! It jumps at you.%n");
          Thread.sleep(1000);
-         System.out.printf("%nYou get scared but quickly realizeâ€¦ It's just a squirrel! As you sigh a breath of release. You hear a branch break%n");
+         System.out.printf("%nYou get scared but quickly realize… It's just a squirrel! As you sigh a breath of release. You hear a branch break%n");
          Thread.sleep(3500);
          System.out.printf("%nCRACK!%n");
          Thread.sleep(1000);
@@ -129,19 +129,22 @@ public class TextCrusades{
          System.out.printf("%n========================================================================%n");                    
          Thread.sleep(5000);
          //fight
-         battle("easy", "Goblin");
-         */
+         
+         
          Thread.sleep(100);
          System.out.printf("%n%nYou defeated the goblin. He is now dead. You continue walking down the forest %n");
          System.out.printf("and you stumble upon two different paths. One of the paths looks spooky and dark,%n");
          System.out.printf("the other trail looks well kept. Which trail would you like to take?%n%n");
          Thread.sleep(4000);
+         */
+         String path = "neither";
          Select = false;
          do{pathChoice();
          selection = input.next();
          switch (selection){
             case "1":
                Select = true;
+               path = "DarkPath";
                break;
             case "2":
                Select = true;
@@ -152,23 +155,228 @@ public class TextCrusades{
           }    
          }while (Select != true); 
          
-         
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         System.out.printf("");
-         
+         if(path == "DarkPath"){
+            System.out.printf("%n%nAs you walk down the dark trail, it gets very muddy and you can see the moon rising overhead.%n");
+            System.out.printf("You hear an owl hooting in the distance. You walk up a hill and see a cabin far off. Since it's%n");
+            System.out.printf("getting late now you need to find a place to sleep. Are you going into the cabin or are you going%n");
+            System.out.printf("to sleep outside?%n%n");
+            Thread.sleep(4000);
+            String sleep = "neither";
+            Select = false;
+            do{sleepChoice();
+            selection = input.next();
+            switch (selection){
+               case "1":
+                  Select = true;
+                  sleep = "inside";
+                  break;
+               case "2":
+                  Select = true;
+                  break;
+               default:
+                  System.out.printf("Please select a valid input%n%n");
+                  break;
+            }    
+            }while (Select != true);
+            if(sleep == "inside"){
+               System.out.printf("You chose the cabin. You knock on the cabin door and an old man opens the door with a crossbow in his hand");
+               Thread.sleep(2500);
+               System.out.printf("%n%n[Unkown man]: Who on earth are you?");
+               Thread.sleep(2000);
+               System.out.printf("%n%n[%s]: My business is my own", name);
+               Thread.sleep(2000);
+               System.out.printf("%n%n[Unkown man]: Whatever, you will have to pay 100 gold pieces to stay the night.%n%n");
+               Thread.sleep(3000);
+               if(weapon == "AK-47"){
+                  String useweapon = "neither";
+                  Select = false;
+                  do{useweapon();
+                  selection = input.next();
+                  switch (selection){
+                     case "1":
+                        Select = true;
+                        useweapon = "AK-47";
+                        break;
+                     case "2":
+                        Select = true;
+                        useweapon = "nomoney";
+                        break;
+                     case "3":
+                        Select = true;
+                        break;
+                     default:
+                        System.out.printf("Please select a valid input%n%n");
+                        break;
+                  }    
+                  }while (Select != true);
+                  if(useweapon == "AK-47"){
+                     System.out.printf("%n%nYou pulled out your gun. And threaten to shoot the man");
+                     Thread.sleep(3000);
+                     System.out.printf("%n%n[%s]: Put your crossbow down...", name);
+                     Thread.sleep(3000);
+                     System.out.printf("%n%nYou pulled the trigger, but... you don't have bullets. It's 408 BCE anyway.");
+                     Thread.sleep(3000);
+                     System.out.printf("%n%nThe man shot you instead with his crossbow.");
+                     Thread.sleep(3000);
+                     System.out.printf("%nGame Over");
+                     System.exit(1);
+                  }else if(useweapon == "nomoney"){
+                     Thread.sleep(3000);
+                     System.out.printf("%n%n[%s]: No idot, I ain't paying that. You pulled out your weapon, threaten me, and expect me to pay? Plus, I only have 5 gold.", name);
+                     Thread.sleep(3000);
+                     System.out.printf("%n%n[Unkown man]: Fine, you can pay 5 gold pieces and stay the night.");
+                     Thread.sleep(2500);
+                     System.out.printf("%n%n[%s]: Alright, fine, here's my money.", name);
+                     Thread.sleep(2500);
+                     System.out.printf("%n%n[Unkown man]: You stay the night, the Unkown-man snores throughout the night so you don’t get much sleep.");
+                  }else{
+                     Thread.sleep(3000);
+                     System.out.printf("%n%n[%s]: How about you pay me, huh?", name);
+                     Thread.sleep(3000);
+                     System.out.printf("%n%n[Unkown man]: Yeah... how about no");
+                     Thread.sleep(3000);
+                     System.out.printf("%n%nThe man shot you.");
+                     Thread.sleep(2500);
+                     System.out.printf("%nGame Over");
+                     System.exit(1);
+                  }
+               }else{
+                  String useweapon = "neither";
+                  Select = false;
+                  do{useweapon2();
+                  selection = input.next();
+                  switch (selection){
+                     case "1":
+                        Select = true;
+                        useweapon = "nomoney";
+                        break;
+                     case "2":
+                        Select = true;
+                        useweapon = "hepay";
+                        break;
+                     default:
+                        System.out.printf("Please select a valid input%n%n");
+                        break;
+                  }    
+                  }while (Select != true);
+                  if(useweapon == "nomoney"){
+                     System.out.printf("%n%n[%s]: No idot, I ain't paying that. You pulled out your weapon, threaten me, and expect me to pay? Plus, I only have 5 gold.", name);
+                     Thread.sleep(3000);
+                     System.out.printf("%n%n[Unkown man]: Fine, you can pay 5 gold pieces and stay the night.");
+                     Thread.sleep(2500);
+                     System.out.printf("%n%n[%s]: Alright, fine, here's my money.", name);
+                     Thread.sleep(2500);
+                     System.out.printf("%n%nYou stay the night, the Unkown-man snores throughout the night so you don't get much sleep.");
+                  }else{
+                     System.out.printf("%n%n[%s]: How about you pay me, huh?", name);
+                     Thread.sleep(2000);
+                     System.out.printf("%n%n[Unkown man]: Yeah... how about no");
+                     Thread.sleep(2000);
+                     System.out.printf("%n%nThe man shot you.");
+                     Thread.sleep(2000);
+                     System.out.printf("%nGame Over");
+                     System.exit(1);
+                  }
+               }      
+            }else{
+               System.out.printf("%nYou decided to sleep outside. But you got attacked by a walking-fish and died.");
+               Thread.sleep(2000);
+               System.out.printf("%nGame Over");
+               System.exit(1);
+            }
+         }else{
+            System.out.printf("%nYou enter the trail and start walking.");
+            Thread.sleep(2000);
+            System.out.printf("%n%nA nice breeze passes through, the smell of roses is in the air. You see a beautiful river by the side and deers and bunnies approach you");
+            Thread.sleep(3500);
+            System.out.printf("%n%nThey are really nice and you start to pet them");
+            Thread.sleep(2000);
+            System.out.printf("%n%nThey bring you food and birds sing for you");
+            Thread.sleep(2000);
+            System.out.printf("%n%nThe sun starts to set, and you see the most beautiful sunset you’ve ever seen in your life.");
+            Thread.sleep(3250);
+            System.out.printf("%n%n It's enough to make a grown man cry...");
+            Thread.sleep(2000);
+            System.out.printf("%n%nas you take a seat near a cave to spend the night, you start looking at the sky, %nthe night sky has now come out and the stars and the moon look like they have come out from a dream. ");
+            Thread.sleep(4000);
+            System.out.printf("%n%nBut then you look behind you");
+            Thread.sleep(2000);
+            System.out.printf("%n%nTurns out the cave you were going to spend the night on, is the home of a bear");
+            if(weapon == "Sandwich"){
+               Thread.sleep(3500);
+               System.out.printf("%n%nBut you realized you have a sandwich!");
+               Thread.sleep(2000);
+               System.out.printf("%n%nYou give it to the bear and he invites you over for tea.");
+               Thread.sleep(2500);
+               System.out.printf("%n%n[Bear]: It's a nice day outside ain't it?");
+               Thread.sleep(2000);
+               System.out.printf("%n%n[%s]: Yeah! It's so beautiful outside.", name);
+               Thread.sleep(2000);
+               System.out.printf("%n%n[Bear]: I know! This is why I love spring. Hey wanna hear a joke?%n%n");
+               String joke = "neither";
+               Select = false;
+               do{joke();
+               selection = input.next();
+               switch (selection){
+                  case "1":
+                     Select = true;
+                     joke = "yes";
+                     break;
+                  case "2":
+                     Select = true;
+                     break;
+                  default:
+                     System.out.printf("Please select a valid input%n%n");
+                     break;
+               }    
+               }while (Select != true);
+               if(joke == "yes"){
+                  System.out.printf("%n%n[Bear]: What do you call bears without ears? B's%n%n");
+                  String laughornot = "neither";
+                  Select = false;
+                  do{laughornot();
+                  selection = input.next();
+                  switch (selection){
+                     case "1":
+                        Select = true;
+                        laughornot = "yes";
+                        break;
+                     case "2":
+                        Select = true;
+                        break;
+                     default:
+                        System.out.printf("Please select a valid input%n%n");
+                        break;
+                  }    
+                  }while (Select != true);
+                  if(laughornot == "yes"){
+                     System.out.printf("%n%n[%s]: HaHaHahaha-ha-a....", name);
+                     Thread.sleep(2500);
+                     System.out.printf("%n%nThe bear let you sleep in his cave. He told you a bedtime story, and gave you a good night's kiss.");
+                  }else{
+                     System.out.printf("%n%nYeah I would do that too...");
+                     Thread.sleep(2000);
+                     System.out.printf("%nGame Over");
+                     System.exit(1);
+                  }
+               }else{
+                  System.out.printf("%n%n[Bear]: :(");
+                  Thread.sleep(2000);
+                  System.out.printf("%n%nThe bear was mad at you the rest of the night. But he let you sleep in his cave.");
+               }
+            }else{
+               Thread.sleep(2500);
+               System.out.printf("%n%nThe bear rips you apart and eats you");
+               Thread.sleep(2500);
+               System.out.printf("%nGame Over");
+               System.exit(1);
+            }
+         }
+         Thread.sleep(3000);
+         System.out.printf("%n%nThe next day you woke up and continued on your way to find the princess.");
+         Thread.sleep(3000);
+         System.out.printf("%n%n");
+        
                                                                                           
                                                                                                                     
       }
@@ -190,6 +398,34 @@ public class TextCrusades{
       System.out.println("           >Dark Path...1         ");
       System.out.println("           >Nice Path...2         ");
    }
+   public static void sleepChoice(){
+      System.out.println("         Where will you sleep?");
+      System.out.println("           >Inside....1         ");
+      System.out.println("           >Outside...2         ");
+   }
+   public static void joke(){
+      System.out.println("       Do you want to hear the joke?");
+      System.out.println("           >Yes....1         ");
+      System.out.println("           >No.....2         ");
+   }
+   public static void laughornot(){
+      System.out.println("          Huh?");
+      System.out.println("           >Laugh...........1       ");
+      System.out.println("           >Unalive yourself...2       ");
+
+   }
+   public static void useweapon(){
+      System.out.println("          What do you want to do?");
+      System.out.println("           >Shoot him.......................1       ");
+      System.out.println("           >Tell him you don't have money...2       ");
+      System.out.println("           >Tell him to pay you.............3       ");
+   } 
+   public static void useweapon2(){
+      System.out.println("          What do you want to do?");
+      System.out.println("           >Tell him you don't have money...1       ");
+      System.out.println("           >Tell him to pay you.............2       ");
+   }    
+   
 }
 
 
