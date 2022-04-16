@@ -1,14 +1,57 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class TextCrusades{
    public static void main(String[] args){
+   
       
+      String[] names = {"Goblin", "Ghost", "devil", "skeleton", "hobgoblin", "Bugbear", "Demon"};
       Scanner input = new Scanner(System.in);
       String name = "Bob";
       String weapon = "AK-47";
       //intro to story
+      
       try{
-         /*
+    
+         Thread.sleep(800);
+         Instructions();
+         Thread.sleep(800);
+         
+         String selection = "default";
+         boolean Select = false;
+         String main;   
+         do{mainMenu();
+         
+         
+         selection = input.next();
+         
+         switch (selection){
+            case "1":
+               main = "startGame";
+               Select = true;
+               break;
+            case "2":
+               weapon = "Credits";
+               System.out.printf("AUTHORS:%n ");
+               System.out.printf("Justin McLeod%n%n");
+               Thread.sleep(800);
+               System.out.printf(" Josue Amaya%n%n");
+               Thread.sleep(800);
+               System.out.printf(" Brigham Blackburn%n%n");
+               Thread.sleep(800);
+               break;
+            case "3":
+               weapon = "Instructions";
+               Instructions();
+               break;
+            default:
+               System.out.printf("Please select the correct key.%n%n");
+               
+               break;
+          }    
+         }while (Select != true);
+        
+
          Thread.sleep(1500); //Delay. Time in milliseconds 
          System.out.printf("It was a beautiful morning... %n");
          Thread.sleep(1500);
@@ -60,8 +103,11 @@ public class TextCrusades{
          System.out.printf("%n%n%n");
          Thread.sleep(1000);
          System.out.printf("%n%n%n%n");
+         
+                  
+         
          System.out.printf("Enter your User name: ");
-         name = input.nextLine();
+         name = input.next();
          
          Thread.sleep(800);
          System.out.printf("%n%n%n%n");
@@ -71,8 +117,7 @@ public class TextCrusades{
          System.out.printf("%n%n%n%n");
          
          System.out.println("And you quest starts, You arm yourself up with...");
-         */boolean Select = false;
-         String selection;/*    
+          Select = false;   
          do{weaponChoice();
          
          
@@ -106,7 +151,7 @@ public class TextCrusades{
          Thread.sleep(3500);
          System.out.printf("%n%n%nlooser%n%n");
          Thread.sleep(1000);
-         System.out.printf("As  you walk down the path you see a figure in the distance. You pull out your weapon, ready to fight.");
+         System.out.printf("As you walk down the path you see a figure in the distance. You pull out your weapon, ready to fight.");
          Thread.sleep(3500);
          System.out.printf("%n%nAnd BAM! It jumps at you.%n");
          Thread.sleep(1000);
@@ -121,12 +166,7 @@ public class TextCrusades{
          System.out.printf("%nA fight scene starts%n");
          Thread.sleep(3000);
          //tutorial
-         System.out.printf("%n============================Quick-Tutorial==============================%n");
-         System.out.printf(" Your stats will be displayed at the left side of the screen. Your enemy%n"); 
-         System.out.printf(" stat's will be displayed on the right. You will be provided with 4%n");
-         System.out.printf(" options underneath the stats. Press your keyboard buttons (1,2,3,4) that%n"); 
-         System.out.printf(" corresponds to each option to select them.%n Good Luck!");
-         System.out.printf("%n========================================================================%n");                    
+         tutorial();                   
          Thread.sleep(5000);
          //fight
          
@@ -136,7 +176,7 @@ public class TextCrusades{
          System.out.printf("and you stumble upon two different paths. One of the paths looks spooky and dark,%n");
          System.out.printf("the other trail looks well kept. Which trail would you like to take?%n%n");
          Thread.sleep(4000);
-         */
+         
          String path = "neither";
          Select = false;
          do{pathChoice();
@@ -179,13 +219,13 @@ public class TextCrusades{
             }    
             }while (Select != true);
             if(sleep == "inside"){
-               System.out.printf("You chose the cabin. You knock on the cabin door and an old man opens the door with a crossbow in his hand");
+               System.out.printf("You chose the cabin. You knock on the cabin door and an old man opens the door with a crossbow in his hand.");
                Thread.sleep(2500);
-               System.out.printf("%n%n[Unkown man]: Who on earth are you?");
+               System.out.printf("%n%n[Unknown man]: Who on earth are you?");
                Thread.sleep(2000);
-               System.out.printf("%n%n[%s]: My business is my own", name);
+               System.out.printf("%n%n[%s]: My business is my own and I would like to stay the night.", name);
                Thread.sleep(2000);
-               System.out.printf("%n%n[Unkown man]: Whatever, you will have to pay 100 gold pieces to stay the night.%n%n");
+               System.out.printf("%n%n[Unknown man]: Whatever, you will have to pay 100 gold pieces to stay the night.%n%n");
                Thread.sleep(3000);
                if(weapon == "AK-47"){
                   String useweapon = "neither";
@@ -222,13 +262,13 @@ public class TextCrusades{
                      System.exit(1);
                   }else if(useweapon == "nomoney"){
                      Thread.sleep(3000);
-                     System.out.printf("%n%n[%s]: No idot, I ain't paying that. You pulled out your weapon, threaten me, and expect me to pay? Plus, I only have 5 gold.", name);
+                     System.out.printf("%n%n[%s]: No idiot, I ain't paying that. You pulled out your weapon, threaten me, and expect me to pay? Plus, I only have 5 gold.", name);
                      Thread.sleep(3000);
                      System.out.printf("%n%n[Unkown man]: Fine, you can pay 5 gold pieces and stay the night.");
                      Thread.sleep(2500);
                      System.out.printf("%n%n[%s]: Alright, fine, here's my money.", name);
                      Thread.sleep(2500);
-                     System.out.printf("%n%n[Unkown man]: You stay the night, the Unkown-man snores throughout the night so you don’t get much sleep.");
+                     System.out.printf("%n%n[Unkown man]: You stay the night, the Unkown-man snores throughout the night so you don't get much sleep.");
                   }else{
                      Thread.sleep(3000);
                      System.out.printf("%n%n[%s]: How about you pay me, huh?", name);
@@ -293,7 +333,7 @@ public class TextCrusades{
             Thread.sleep(2000);
             System.out.printf("%n%nThey bring you food and birds sing for you");
             Thread.sleep(2000);
-            System.out.printf("%n%nThe sun starts to set, and you see the most beautiful sunset you’ve ever seen in your life.");
+            System.out.printf("%n%nThe sun starts to set, and you see the most beautiful sunset you have ever seen in your life.");
             Thread.sleep(3250);
             System.out.printf("%n%n It's enough to make a grown man cry...");
             Thread.sleep(2000);
@@ -301,7 +341,7 @@ public class TextCrusades{
             Thread.sleep(4000);
             System.out.printf("%n%nBut then you look behind you");
             Thread.sleep(2000);
-            System.out.printf("%n%nTurns out the cave you were going to spend the night on, is the home of a bear");
+            System.out.printf("%n%nTurns out the cave you were going to spend the night in, is the home of a bear");
             if(weapon == "Sandwich"){
                Thread.sleep(3500);
                System.out.printf("%n%nBut you realized you have a sandwich!");
@@ -373,18 +413,122 @@ public class TextCrusades{
             }
          }
          Thread.sleep(3000);
-         System.out.printf("%n%nThe next day you woke up and continued on your way to find the princess.");
+         System.out.printf("%n%nThe next day you wake up and continue your way to find the princess.");
          Thread.sleep(3000);
          System.out.printf("%n%n");
-        
-                                                                                          
-                                                                                                                    
+         System.out.printf("As you continue forward, you see a large green plain in front of you With a dark castle in the distance.");
+         Thread.sleep(2000);
+         System.out.printf("%n%n");
+         System.out.printf("There is a large lake that it looks as though you will have to pass.%n%n");
+         Thread.sleep(2000);
+         System.out.printf("There is also a forest on the left and and hill with a ring of trees on the right%n%n");
+         Thread.sleep(2000);
+         System.out.printf("But there is also a rowboat that it looks like you can use to get across the lake%n%n");
+         Thread.sleep(2000);
+         System.out.printf("There are three ways to go the forest, across the lake, or the hill with the ring of trees%n%n");
+         Select = false;
+         String location = "no choice yet";
+            do{threeChoices();
+            selection = input.next();
+            
+            switch (selection){
+               case "1":
+                  Select = true;
+                  location = "forest";
+                  break;
+               case "2":
+                  Select = true;
+                  location = "lake";
+                  break;
+               case "3":
+                  Select = true;
+                  location = "hill";
+                  break;
+               default:
+                  System.out.printf("Please select a valid input%n%n");
+                  break;
+            }    
+            }while (Select != true);
+            if(location == "forest"){
+               System.out.printf("The forest seems to drain light from it as you walk in.%n%n");
+               Thread.sleep(2000);
+               System.out.printf("It seems to be the fastest way however so hopefully you can make through quickly.%n%n");
+               Thread.sleep(2000);
+               System.out.printf("As you continue walking, the ground starts to feel cold.%n%n");
+               Thread.sleep(2000);
+               System.out.printf("It was midday outside before so its strange that it was getting cold%n%n");
+               Thread.sleep(2000);
+               System.out.printf("In front of you there is a shadowy figure.%n%n");
+               Thread.sleep(2000);
+               System.out.printf("They point a finger at you and start to run at you%n%n");
+               Thread.sleep(2000);
+               System.out.printf("It looks like you'll have to fight your way out of this%n%n");
+               Thread.sleep(2000);
+               tutorial();
+               System.out.println("The fight scene begins");
+               Thread.sleep(5000);
+               //have to put combat here
+            }
+            else if(location == "lake"){
+            System.out.printf("As you walk towards the boat you realize how large the lake is%n%n");
+            Thread.sleep(2000);
+            System.out.printf("You get in the boat and start rowing%n%n");
+            Thread.sleep(2000);
+            System.out.printf("You notice there are some ripples in the otherwise unmoving water%n%n");
+            Thread.sleep(2000);
+            System.out.printf("Out of the corner of your eyes you see a flipper go underneath the boat%n%n");
+            Thread.sleep(2000);
+            System.out.printf("The boat starts rocking back and forth%n%n");
+            Thread.sleep(2000);
+            System.out.printf("All of a sudden the boat is flipped and you are drowned by merpeople%n%n");
+            Thread.sleep(2000);
+            System.out.printf("Game over");
+            }
+            else if (location == "hill"){
+               System.out.printf("As you walk forward up the hill you hear some enchanting music%n%n");
+               Thread.sleep(2000);
+               System.out.printf("When you reach the top of the hill you see a potion in a bottle and music seems to emanating from it%n%n");
+               Thread.sleep(2000);
+               takePotion();
+            
+               Select = false;
+               do{takePotion();
+                  String location1 = "no choice yet";
+                  switch (selection){
+               case "1":
+                  Select = true;
+                  location1 = "take";
+                  break;
+               case "2":
+                  Select = true;
+                  location1 = "dontTake";
+                  break;
+               default:
+                  System.out.printf("Please select a valid input%n%n");
+                  break;
+                  
+
+                  }
+            
+               }while(Select != true);
+            
+             }
+      
+    
       }
       catch(InterruptedException e){
       System.err.println(e.getMessage());
-      }
+      
    }//end of main
    
+   }
+   public static void mainMenu(){
+      System.out.printf("        MAIN MENU    %n%n");
+      System.out.printf("    PLAY............1   %n%n");
+      System.out.printf("    CREDITS.........2    %n%n");
+      System.out.printf("    INSTRUCTIONS....3    %n%n"); 
+   
+   }
    public static void weaponChoice(){
       System.out.println("         What weapon do you want?");
       System.out.println("           >Iron Sword...1         ");
@@ -394,7 +538,7 @@ public class TextCrusades{
    }//end of weapon choice
    
    public static void pathChoice(){
-      System.out.println("         What path would you choose?");
+      System.out.println("         What path do you choose?");
       System.out.println("           >Dark Path...1         ");
       System.out.println("           >Nice Path...2         ");
    }
@@ -410,8 +554,8 @@ public class TextCrusades{
    }
    public static void laughornot(){
       System.out.println("          Huh?");
-      System.out.println("           >Laugh...........1       ");
-      System.out.println("           >Unalive yourself...2       ");
+      System.out.println("           >Laugh...........................1       ");
+      System.out.println("           >Look at the bear disappointed...2       ");
 
    }
    public static void useweapon(){
@@ -424,9 +568,32 @@ public class TextCrusades{
       System.out.println("          What do you want to do?");
       System.out.println("           >Tell him you don't have money...1       ");
       System.out.println("           >Tell him to pay you.............2       ");
+   }    
+   public static void threeChoices(){
+      System.out.printf("               Which way do you want to go to get to the castle?%n%n");
+      System.out.println("               >To the left to the forest........................1");
+      System.out.println("               >The boat across the lake.........................2");
+      System.out.println("               >To the right with the hill.......................3");
    }
-   
-   
+   public static void tutorial(){
+      System.out.printf("%n============================Quick-Tutorial==============================%n");
+      System.out.printf(" Your stats will be displayed at the left side of the screen. Your enemy%n"); 
+      System.out.printf(" stat's will be displayed on the right. You will be provided with 4%n");
+      System.out.printf(" options underneath the stats. Press your keyboard buttons (1,2,3,4) that%n"); 
+      System.out.printf(" corresponds to each option to select them.%n Good Luck!");
+      System.out.printf("%n========================================================================%n");                    
+   }
+         //fight
+   public static void takePotion(){
+   System.out.println("               Would you like to take the potion? ");
+   System.out.println("               No......1                          ");
+   System.out.println("               Yes.....2                          ");
+   }
+   public static void Instructions(){
+       System.out.printf("%n============================Quick-game Instructions==============================%n");
+       System.out.printf("The games controls will be using the keyboard (1,2,3,4) to allow you to do things");
+       System.out.printf("%n========================================================================%n");
+   }
    public static void combatMenu(Player p, Monster m){
       Scanner action = new Scanner(System.in);
       Random randBouns = new Random();
@@ -491,10 +658,9 @@ public class TextCrusades{
       }while((m.getAlive() == true) && (p.getAlive() == true));
       
       if(m.getAlive() == false){
-        System.out.printf("you Deafeated the %s", m.getName());
+        System.out.printf("you Defeated the %s", m.getName());
       }
-   }
-   
+   }    
 }
 
 
