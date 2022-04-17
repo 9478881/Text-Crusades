@@ -1,3 +1,11 @@
+/*****************************************  
+* Authors: Brigham Blackburn, Josue Amaya, and Justin Mcleod
+* Date :04/17/22
+* Assignment: Final Project, Josue worked on the first half of the main from lines 1-430, 
+Brigham did the second half from lines 431-659 and made the monster class. Also making the game menu and putting
+ in the combat scenarios into the code.Justin did the player class and modified the monster class so it would
+  work for the combat menu with also doing the combat menu. Justin also got the first switch statment working which we used for a lot of the code.
+******************************************/
 import java.util.Scanner;
 import java.util.Random;
 
@@ -550,28 +558,49 @@ public class TextCrusades{
          Monster Monster4 = new Monster(names[0], 10, 5, 50);
          Monster Monster5 = new Monster(names[0], 10, 5, 50);
       combatMenu(player1, Monster4);
-      System.out.printf("Nice job you killed one of the guards, now you have to take on the other");
+      System.out.printf("Nice job you killed one of the guards, now you have to take on the other%n%n");
+      Thread.sleep(2000);
       combatMenu(player1, Monster5);
       System.out.printf("Good job, now go find the princess in the castle.%n%n");
+      Thread.sleep(2000);
       System.out.printf("You walk up the stairs and find a throne room with no one guarding it.%n%n");
-      System.out.printf("You enter the room and you a tall troll that must be at least twice your height who is snoring loudly.%n");
-      System.out.printf("You see the princess in a cage in a corner who is also asleep.%n");
-      System.out.printf("You decide your going to try to sneak over to the princess and sneak her out.%n");
-      System.out.printf("You get over to the cage and say, princess, princess, wake up.%n");
-      System.out.printf("She wakes up eyes wide open");
-      System.out.printf("What are you doing here?");
-      System.out.printf("I've come to save you!");
-      System.out.printf("You can't the troll king will kill you.");
-      System.out.printf("No, I will save you!");
-      System.out.printf("Your going to have to get the key first!");
-      System.out.printf("You you see the Troll has a key around his neck for the cage");
-      System.out.printf("No matter, I will get it and get you out of here");
-      System.out.printf("You walk over to the troll and very carefully walk up his belly");
-      System.out.printf("The troll snores peacefully still, very carefully with a knife you have, you cut the rope with they key on it.");
-      System.out.printf("But then, the troll wakes up with a roar");
-      System.out.printf("WHO HAS COME TO STEAL MY TREASURE!");
-      System.out.printf("The troll stands up and starts to fight you");
-      System.out.printf("FINAL BOSS FIGHT");
+      Thread.sleep(2000);
+      System.out.printf("You enter the room and you a tall troll that must be at least twice your height who is snoring loudly.%n%n");
+      Thread.sleep(2000);
+      System.out.printf("You see the princess in a cage in a corner who is also asleep.%n%n");
+      Thread.sleep(2000);
+      System.out.printf("You decide your going to try to sneak over to the princess and sneak her out.%n%n");
+      Thread.sleep(2000);
+      System.out.printf("You get over to the cage and say, princess, princess, wake up.%n%n");
+      Thread.sleep(2000);
+      System.out.printf("She wakes up and her eyes open.%n%n");
+      Thread.sleep(2000);
+      System.out.printf("Princess: What are you doing here?%n%n");
+      Thread.sleep(2000);
+      System.out.printf("[%s]: Iv'e come to save you", name);
+      Thread.sleep(2000);
+      System.out.printf("Princess: You can't the troll King will kill you %n%n");
+      Thread.sleep(2000);
+      System.out.printf("[%s]: No, I will save you%n%n", name);
+      Thread.sleep(2000);
+      System.out.printf("Princess: Your going to have to get the key first then%n%n");
+      Thread.sleep(2000);
+      System.out.printf("You look over to the troll and see the key around his neck%n%n");
+      Thread.sleep(2000);
+      System.out.printf("[%s]: No matter, I will get it and get you out of here%n%n");
+      Thread.sleep(2000);
+      System.out.printf("You walk over to the troll and very carefully walk up his belly%n%n");
+      Thread.sleep(2000);
+      System.out.printf("The troll snores peacefully still, very carefully with a knife you have, you cut the rope with the key on it.%n%n");
+      Thread.sleep(2000);
+      System.out.printf("But then, the troll wakes up with a roar%n%n");
+      Thread.sleep(2000);
+      System.out.printf("WHO HAS COME TO STEAL MY TREASURE!%n%n");
+      Thread.sleep(2000);
+      System.out.printf("The troll stands up and starts to fight you%n%n");
+      Thread.sleep(2000);
+      System.out.printf("FINAL BOSS FIGHT%n%n");
+
       Monster Monster6= new Monster(names[7],20,5,100);
       combatMenu(player1, Monster6);
       }
