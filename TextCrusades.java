@@ -59,7 +59,7 @@ public class TextCrusades{
           }    
          }while (Select != true);
         
-         /*
+         
          Thread.sleep(1500); //Delay. Time in milliseconds 
          System.out.printf("It was a beautiful morning... %n");
          Thread.sleep(1500);
@@ -179,7 +179,7 @@ public class TextCrusades{
          System.out.printf("%n%n%n%n");
          
        
-         */
+         
          //public Player(String name, int health, int damage, int defense)
          Player player1 = new Player(name, 150, 20, 5);
          
@@ -187,7 +187,7 @@ public class TextCrusades{
          Monster Monster1 = new Monster(names[0], 15,5, 75);
          //fight
          combatMenu(player1, Monster1);
-         /*
+         
          
          Thread.sleep(100);
          System.out.printf("%n%nYou continue walking down the forest %n");
@@ -432,7 +432,7 @@ public class TextCrusades{
                System.exit(1);
             }
          }
-         */
+         
          Thread.sleep(3000);
          System.out.printf("%n%nThe next day you wake up and continue on your way to find the princess.");
          Thread.sleep(3000);
@@ -473,7 +473,6 @@ public class TextCrusades{
             
             String location1 = "no choice yet";
             if(location == "forest"){
-               //public Monster( String n, int d, int de, int h)
                Monster Monster3 = new Monster(names[1], 10, 5, 75);
                System.out.printf("The forest seems to drain light from it as you walk in.%n%n");
                Thread.sleep(2000);
@@ -516,7 +515,6 @@ public class TextCrusades{
                Thread.sleep(2000);
                System.out.printf("When you reach the top of the hill you see a potion in a bottle and music seems to be coming from it%n%n");
                Thread.sleep(2000);
-               //public Monster( String n, int d, int de, int h)
                Monster Monster2 = new Monster(names[2], 10, 5, 50);
                boolean Select1 = false;
               // String location1 = "no choice yet";
@@ -548,7 +546,6 @@ public class TextCrusades{
       System.out.printf("Is is very tall and there are two goblin guards up front%n%n");
       System.out.printf("You will have to fight the guards.%n%n");
       System.out.printf("You run up to the drawbridge and pull out your weapon to start to fight them%n%n");
-      //public Monster( String n, int d, int de, int h)
       Monster Monster4 = new Monster(names[0], 10, 5, 50);
       Monster Monster5 = new Monster(names[0], 10, 5, 50);
       combatMenu(player1, Monster4);
@@ -595,8 +592,6 @@ public class TextCrusades{
       Thread.sleep(4000);
       System.out.printf("FINAL BOSS FIGHT%n%n");
       
-      //public Player(String name, int health, int damage, int defense)
-        // Player player1 = new Player(name, 150, 20, 5);
 
       Monster Monster6= new Monster(names[7],20,5,100);
       if(location1 == "take"){
