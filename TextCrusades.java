@@ -471,6 +471,7 @@ public class TextCrusades{
             }    
             }while (Select != true);
             
+            String location1 = "no choice yet";
             if(location == "forest"){
                //public Monster( String n, int d, int de, int h)
                 Monster Monster3 = new Monster(names[1], 10, 5, 75);
@@ -509,6 +510,7 @@ public class TextCrusades{
             System.out.printf("Game over");
             System.exit(0);
             }
+            
             else if (location == "hill"){
                System.out.printf("As you walk forward up the hill you hear some enchanting music%n%n");
                Thread.sleep(2000);
@@ -520,7 +522,7 @@ public class TextCrusades{
                //public Monster( String n, int d, int de, int h)
          Monster Monster2 = new Monster(names[2], 10, 5, 50);
               boolean Select1 = false;
-               String location1 = "no choice yet";
+              // String location1 = "no choice yet";
                do{takePotion();
                   String selection1 = input.next();
                   switch (selection1){
@@ -550,7 +552,7 @@ public class TextCrusades{
              
              }
       
-      System.out.printf("You have finally reached the castle%n%n");
+      System.out.printf("%nYou have finally reached the castle%n%n");
       System.out.printf("Is is very tall and there are two goblin guards up front%n%n");
       System.out.printf("You will have to fight the guards.%n%n");
       System.out.printf("You run up to the drawbridge and pull out your weapon to start to fight them%n%n");
@@ -558,52 +560,62 @@ public class TextCrusades{
          Monster Monster4 = new Monster(names[0], 10, 5, 50);
          Monster Monster5 = new Monster(names[0], 10, 5, 50);
       combatMenu(player1, Monster4);
-      System.out.printf("Nice job you killed one of the guards, now you have to take on the other%n%n");
-      Thread.sleep(2000);
+      System.out.printf("%nNice job you killed one of the guards, now you have to take on the other%n%n");
+      Thread.sleep(4000);
       combatMenu(player1, Monster5);
-      System.out.printf("Good job, now go find the princess in the castle.%n%n");
-      Thread.sleep(2000);
+      System.out.printf("%nGood job, now go find the princess in the castle.%n%n");
+      Thread.sleep(4000);
       System.out.printf("You walk up the stairs and find a throne room with no one guarding it.%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("You enter the room and you a tall troll that must be at least twice your height who is snoring loudly.%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("You see the princess in a cage in a corner who is also asleep.%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("You decide your going to try to sneak over to the princess and sneak her out.%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("You get over to the cage and say, princess, princess, wake up.%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("She wakes up and her eyes open.%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("Princess: What are you doing here?%n%n");
-      Thread.sleep(2000);
-      System.out.printf("[%s]: Iv'e come to save you", name);
-      Thread.sleep(2000);
-      System.out.printf("Princess: You can't the troll King will kill you %n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
+      System.out.printf("[%s]: Iv'e come to save you%n%n", name);
+      Thread.sleep(4000);
+      System.out.printf("Princess: You can't, the troll King will kill you %n%n");
+      Thread.sleep(4000);
       System.out.printf("[%s]: No, I will save you%n%n", name);
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("Princess: Your going to have to get the key first then%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("You look over to the troll and see the key around his neck%n%n");
-      Thread.sleep(2000);
-      System.out.printf("[%s]: No matter, I will get it and get you out of here%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
+      System.out.printf("[%s]: No matter, I will get it and get you out of here%n%n", name);
+      Thread.sleep(4000);
       System.out.printf("You walk over to the troll and very carefully walk up his belly%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("The troll snores peacefully still, very carefully with a knife you have, you cut the rope with the key on it.%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("But then, the troll wakes up with a roar%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("WHO HAS COME TO STEAL MY TREASURE!%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("The troll stands up and starts to fight you%n%n");
-      Thread.sleep(2000);
+      Thread.sleep(4000);
       System.out.printf("FINAL BOSS FIGHT%n%n");
+      
+      //public Player(String name, int health, int damage, int defense)
+        // Player player1 = new Player(name, 150, 20, 5);
 
       Monster Monster6= new Monster(names[7],20,5,100);
+      if(location1 == "take"){
+         System.out.println("Oh look, you have a potion from the hill, hurry, take it, it will increase your health");
+         Player player2 = new Player(name, 100, 20, 5);
+         combatMenu(player2, Monster6);
+      }
+      else{
       combatMenu(player1, Monster6);
       }
+     }
       catch(InterruptedException e){
       System.err.println(e.getMessage());
       
