@@ -282,11 +282,11 @@ public class TextCrusades{
                      Thread.sleep(3000);
                      System.out.printf("%n%n[%s]: No idiot, I ain't paying that. You pulled out your weapon, threaten me, and expect me to pay? Plus, I only have 5 gold.", name);
                      Thread.sleep(3000);
-                     System.out.printf("%n%n[Unkown man]: Fine, you can pay 5 gold pieces and stay the night.");
+                     System.out.printf("%n%n[Unknown man]: Fine, you can pay 5 gold pieces and stay the night.");
                      Thread.sleep(2500);
                      System.out.printf("%n%n[%s]: Alright, fine, here's my money.", name);
                      Thread.sleep(2500);
-                     System.out.printf("%n%n[Unkown man]: You stay the night, the Unknown-man snores throughout the night so you don't get much sleep.");
+                     System.out.printf("%n%n[Unknown man]: You stay the night, the Unknown-man snores throughout the night so you don't get much sleep.");
                   }else{
                      Thread.sleep(3000);
                      System.out.printf("%n%n[%s]: How about you pay me, huh?", name);
@@ -434,7 +434,7 @@ public class TextCrusades{
          }
          */
          Thread.sleep(3000);
-         System.out.printf("%n%nThe next day you wake up and continue your way to find the princess.");
+         System.out.printf("%n%nThe next day you wake up and continue on your way to find the princess.");
          Thread.sleep(3000);
          System.out.printf("%n%n");
          System.out.printf("As you continue forward, you see a large green plain in front of you With a dark castle in the distance.");
@@ -442,11 +442,11 @@ public class TextCrusades{
          System.out.printf("%n%n");
          System.out.printf("There is a large lake that it looks as though you will have to pass.%n%n");
          Thread.sleep(2000);
-         System.out.printf("There is also a forest on the left and and hill with a ring of trees on the right%n%n");
+         System.out.printf("There is a forest on the left, and a hill with a ring of trees on the right%n%n");
          Thread.sleep(2000);
          System.out.printf("But there is also a rowboat that it looks like you can use to get across the lake%n%n");
          Thread.sleep(2000);
-         System.out.printf("There are three ways to go the forest, across the lake, or the hill with the ring of trees%n%n");
+         System.out.printf("There are three ways to go, the forest, across the lake, or the hill with the ring of trees%n%n");
          Select = false;
          String location = "no choice yet";
             do{threeChoices();
@@ -534,7 +534,7 @@ public class TextCrusades{
                   Select1 = true;
                   location1 = "take";
                   System.out.printf("As you take the potion, everything turns darker and you see%n%n");
-                  System.out.printf("something run up the hill and is coming to attack you%n%n");
+                  System.out.printf("something run up the hill coming to attack you%n%n");
                   System.out.printf("Your going to have to fight this monster for the potion%n%n");
                      
                      combatMenu(player1, Monster2);
@@ -567,11 +567,11 @@ public class TextCrusades{
       Thread.sleep(4000);
       System.out.printf("You walk up the stairs and find a throne room with no one guarding it.%n%n");
       Thread.sleep(4000);
-      System.out.printf("You enter the room and you a tall troll that must be at least twice your height who is snoring loudly.%n%n");
+      System.out.printf("You enter the room and you see a tall troll that must be at least twice your height who is snoring loudly.%n%n");
       Thread.sleep(4000);
       System.out.printf("You see the princess in a cage in a corner who is also asleep.%n%n");
       Thread.sleep(4000);
-      System.out.printf("You decide your going to try to sneak over to the princess and sneak her out.%n%n");
+      System.out.printf("You decide your going to try to sneak over to the princess and get her out.%n%n");
       Thread.sleep(4000);
       System.out.printf("You get over to the cage and say, princess, princess, wake up.%n%n");
       Thread.sleep(4000);
@@ -608,7 +608,7 @@ public class TextCrusades{
 
       Monster Monster6= new Monster(names[7],20,5,100);
       if(location1 == "take"){
-         System.out.println("Oh look, you have a potion from the hill, hurry, take it, it will increase your health");
+         System.out.println("Oh look, you have a potion from earlier, hurry, take it, it will increase your health");
          Player player2 = new Player(name, 100, 20, 5);
          combatMenu(player2, Monster6);
       }
