@@ -52,7 +52,7 @@ public class TextCrusades{
           }    
          }while (Select != true);
         
-        /*
+        
          Thread.sleep(1500); //Delay. Time in milliseconds 
          System.out.printf("It was a beautiful morning... %n");
          Thread.sleep(1500);
@@ -148,7 +148,7 @@ public class TextCrusades{
          }while (Select != true);         
          System.out.printf("%n... Amazing choice!%n");   
          Thread.sleep(800);
-         System.out.printf("%nNow you step towards the drawbridge, ready to go on in your adventure to find the princess.%nEveryone depends on you, so you better not fail them.");
+         System.out.printf("%nNow you step towards the bridge, ready to go on in your adventure to find the princess.%nEveryone depends on you, so you better not fail them.");
          Thread.sleep(3500);
          System.out.printf("%n%n%nlooser%n%n");
          Thread.sleep(1000);
@@ -156,7 +156,7 @@ public class TextCrusades{
          Thread.sleep(3500);
          System.out.printf("%n%nAnd BAM! It jumps at you.%n");
          Thread.sleep(1000);
-         System.out.printf("%nYou get scared but quickly realize… It's just a squirrel! As you sigh a breath of release. You hear a branch break%n");
+         System.out.printf("%nYou get scared but quickly realize… It's just a squirrel! As you sigh a breath of relief. You hear a branch break%n");
          Thread.sleep(3500);
          System.out.printf("%nCRACK!%n");
          Thread.sleep(1000);
@@ -169,18 +169,18 @@ public class TextCrusades{
          //tutorial
          tutorial();                   
          Thread.sleep(7000);
-         */
+         
        
         
          //public Player(String name, int health, int damage, int defense)
          Player player1 = new Player(name, 150, 20, 5);
          
          //public Monster( String n, int d, int de, int h)
-         Monster Monster1 = new Monster(names[0], 10, 5, 50);
+         Monster Monster1 = new Monster(names[0], 15,5, 75);
          //fight
          combatMenu(player1, Monster1);
          
-         /*
+         
          Thread.sleep(100);
          System.out.printf("%n%n You continue walking down the forest %n");
          System.out.printf("and you stumble upon two different paths. One of the paths looks spooky and dark,%n");
@@ -422,7 +422,7 @@ public class TextCrusades{
                System.exit(1);
             }
          }
-         */
+         
          Thread.sleep(3000);
          System.out.printf("%n%nThe next day you wake up and continue your way to find the princess.");
          Thread.sleep(3000);
@@ -497,6 +497,7 @@ public class TextCrusades{
             System.out.printf("All of a sudden the boat is flipped and you are drowned by merpeople%n%n");
             Thread.sleep(2000);
             System.out.printf("Game over");
+            System.exit(0);
             }
             else if (location == "hill"){
                System.out.printf("As you walk forward up the hill you hear some enchanting music%n%n");
@@ -504,29 +505,7 @@ public class TextCrusades{
                System.out.printf("When you reach the top of the hill you see a potion in a bottle and music seems to be coming from it%n%n");
                Thread.sleep(2000);
                
-               /*
-                  Select = false;
-         String location = "no choice yet";
-            do{threeChoices();
-            selection = input.next();
-            
-            switch (selection){
-               case "1":
-                  Select = true;
-                  location = "forest";
-                  break;
-               case "2":
-                  Select = true;
-                  location = "lake";
-                  break;
-               case "3":
-                  Select = true;
-                  location = "hill";
-                  break;
-               default:
-                  System.out.printf("Please select a valid input%n%n");
-                  break;
-                  */
+               
                   
                //public Monster( String n, int d, int de, int h)
          Monster Monster2 = new Monster(names[2], 10, 5, 50);
