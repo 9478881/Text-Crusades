@@ -6,7 +6,7 @@ public class TextCrusades{
    
       Random rand = new Random();
       Scanner input = new Scanner(System.in);
-      String[] names = {"Goblin", "Ghost", "devil", "skeleton", "hobgoblin", "Bugbear", "Demon","BOSS_TROLL"};
+      String[] names = {"Goblin", "Ghost", "devil", "skeleton", "hobgoblin", "Bugbear", "Demon","BOSS TROLL"};
     
       String name = "Bob";
       String weapon = "AK-47";
@@ -17,7 +17,6 @@ public class TextCrusades{
          Thread.sleep(800);
          Instructions();
          Thread.sleep(800);
-         
          String selection = "default";
          boolean Select = false;
          String main;   
@@ -34,7 +33,7 @@ public class TextCrusades{
             case "2":
                weapon = "Credits";
                System.out.printf("AUTHORS:%n ");
-               System.out.printf("Justin McLeod%n%n");
+               System.out.printf(" Justin McLeod%n%n");
                Thread.sleep(800);
                System.out.printf(" Josue Amaya%n%n");
                Thread.sleep(800);
@@ -52,7 +51,7 @@ public class TextCrusades{
           }    
          }while (Select != true);
         
-        
+         /*
          Thread.sleep(1500); //Delay. Time in milliseconds 
          System.out.printf("It was a beautiful morning... %n");
          Thread.sleep(1500);
@@ -69,19 +68,19 @@ public class TextCrusades{
          System.out.printf("%n%n[King]: THE PRINCESS HAS BEEN KIDNAPPED");
          Thread.sleep(2000);
          System.out.printf("%n%nThe monsters leave with the princess, and with the king completely devastated %nby his daughter's kidnapping. You, as the second in charge, must go and save %nthe princess from the hands of the evil monsters. ");
-         Thread.sleep(4000);
+         Thread.sleep(4500);
          System.out.printf("%n%n%n");
-         Thread.sleep(1000);
+         Thread.sleep(800);
          System.out.printf("%n%n%n");
-         Thread.sleep(1000);
+         Thread.sleep(800);
          System.out.printf("%n%n%n");
-         Thread.sleep(1000);
+         Thread.sleep(800);
          System.out.printf("%n%n%n");
-         Thread.sleep(1000);
+         Thread.sleep(800);
          System.out.printf("%n%n%n");
-         Thread.sleep(1000);
+         Thread.sleep(800);
          System.out.printf("%n%n%n");
-         Thread.sleep(1000);
+         Thread.sleep(800);
          System.out.printf(" _    _      _                            _          _____         _     _____                          _         %n");
          Thread.sleep(800);
          System.out.printf("| |  | |    | |                          | |        |_   _|       | |   /  __ \\                        | |        %n");
@@ -94,20 +93,20 @@ public class TextCrusades{
          Thread.sleep(800);
          System.out.printf(" \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/    \\_/\\___/_/\\_\\\\__|  \\____/_|   \\__,_|___/\\__,_|\\__,_|\\___||___/");
          System.out.printf("%n%n%n");
-         Thread.sleep(1000);
+         Thread.sleep(800);
          System.out.printf("%n%n%n");
-         Thread.sleep(1000);
+         Thread.sleep(800);
          System.out.printf("%n%n%n");
-         Thread.sleep(1000);
+         Thread.sleep(800);
          System.out.printf("%n%n%n");
-         Thread.sleep(1000);
+         Thread.sleep(800);
          System.out.printf("%n%n%n");
-         Thread.sleep(1000);
+         Thread.sleep(800);
          System.out.printf("%n%n%n%n");
          
                   
          
-         System.out.printf("Enter your User name: ");
+         System.out.printf("Enter your Username: ");
          name = input.next();
          
          Thread.sleep(800);
@@ -156,7 +155,7 @@ public class TextCrusades{
          Thread.sleep(3500);
          System.out.printf("%n%nAnd BAM! It jumps at you.%n");
          Thread.sleep(1000);
-         System.out.printf("%nYou get scared but quickly realize… It's just a squirrel! As you sigh a breath of relief. You hear a branch break%n");
+         System.out.printf("%nYou get scared but quickly realize... It's just a squirrel! As you sigh a breath of relief. You hear a branch break%n");
          Thread.sleep(3500);
          System.out.printf("%nCRACK!%n");
          Thread.sleep(1000);
@@ -168,10 +167,11 @@ public class TextCrusades{
          Thread.sleep(3000);
          //tutorial
          tutorial();                   
-         Thread.sleep(7000);
+         Thread.sleep(8000);
+         System.out.printf("%n%n%n%n");
          
        
-        
+         */
          //public Player(String name, int health, int damage, int defense)
          Player player1 = new Player(name, 150, 20, 5);
          
@@ -179,10 +179,10 @@ public class TextCrusades{
          Monster Monster1 = new Monster(names[0], 15,5, 75);
          //fight
          combatMenu(player1, Monster1);
-         
+         /*
          
          Thread.sleep(100);
-         System.out.printf("%n%n You continue walking down the forest %n");
+         System.out.printf("%n%nYou continue walking down the forest %n");
          System.out.printf("and you stumble upon two different paths. One of the paths looks spooky and dark,%n");
          System.out.printf("the other trail looks well kept. Which trail would you like to take?%n%n");
          Thread.sleep(4000);
@@ -345,7 +345,7 @@ public class TextCrusades{
             Thread.sleep(2000);
             System.out.printf("%n%nThe sun starts to set, and you see the most beautiful sunset you have ever seen in your life.");
             Thread.sleep(3250);
-            System.out.printf("%n%n It's enough to make a grown man cry...");
+            System.out.printf("%n%nIt's enough to make a grown man cry...");
             Thread.sleep(2000);
             System.out.printf("%n%nas you take a seat near a cave to spend the night, you start looking at the sky, %nthe night sky has now come out and the stars and the moon look like they have come out from a dream. ");
             Thread.sleep(4000);
@@ -406,6 +406,8 @@ public class TextCrusades{
                   }else{
                      System.out.printf("%n%nYeah I would do that too...");
                      Thread.sleep(2000);
+                     System.out.printf("%n%nBut anyway. The bear got mad at you for not lauging at his joke. So he killed you...");
+                     Thread.sleep(2000);
                      System.out.printf("%nGame Over");
                      System.exit(1);
                   }
@@ -422,7 +424,7 @@ public class TextCrusades{
                System.exit(1);
             }
          }
-         
+         */
          Thread.sleep(3000);
          System.out.printf("%n%nThe next day you wake up and continue your way to find the princess.");
          Thread.sleep(3000);
@@ -580,10 +582,13 @@ public class TextCrusades{
    
    }
    public static void mainMenu(){
-      System.out.printf("        MAIN MENU    %n%n");
-      System.out.printf("    PLAY............1   %n%n");
-      System.out.printf("    CREDITS.........2    %n%n");
-      System.out.printf("    INSTRUCTIONS....3    %n%n"); 
+      System.out.printf("%n%n                            =========================%n");
+      System.out.printf("                                    MAIN MENU    %n%n");
+      System.out.printf("                                >PLAY............1   %n%n");
+      System.out.printf("                                >CREDITS.........2    %n%n");
+      System.out.printf("                                >INSTRUCTIONS....3    %n");
+      System.out.printf("                             =========================%n%n");
+ 
    
    }
    public static void weaponChoice(){
@@ -642,14 +647,14 @@ public class TextCrusades{
    }
          //fight
    public static void takePotion(){
-   System.out.println("               Would you like to take the potion? ");
+   System.out.println("           Would you like to take the potion? ");
    System.out.println("               No......1                          ");
    System.out.println("               Yes.....2                          ");
    }
    public static void Instructions(){
-       System.out.printf("%n============================Quick-game Instructions==============================%n");
-       System.out.printf("The games controls will be using the keyboard (1,2,3,4) to allow you to do things");
-       System.out.printf("%n========================================================================%n");
+       System.out.printf("%n=============================Quick-game Instructions=================================%n");
+       System.out.printf("  The games controls will be using the keyboard (1,2,3,4) to allow you to do things");
+       System.out.printf("%n=====================================================================================%n");
    }
    public static void combatMenu(Player p, Monster m){
       Scanner action = new Scanner(System.in);
@@ -665,10 +670,10 @@ public class TextCrusades{
          System.out.printf("%n%n");
          System.out.printf("___________________________________________________________________________%n");
          System.out.printf("___________________________________________________________________________%n");
-         System.out.printf("%-34s %-34s %-34s%n", "ATTACK", "BLOCK", "HEAL");
-         System.out.printf("                            Enter 1 to ATTACK                              %n");
-         System.out.printf("                            Enter 2 to BLOCK                               %n");
-         System.out.printf("                            Enter 3 to HEAL                                %n");
+         System.out.printf("%-34s %-34s %-34s%n", "ATTACK(1)", "BLOCK(2)", "HEAL(3)");
+         //System.out.printf("                            Enter 1 to ATTACK                              %n");
+         //System.out.printf("                            Enter 2 to BLOCK                               %n");
+         //System.out.printf("                            Enter 3 to HEAL                                %n");
          
          
          
@@ -690,6 +695,8 @@ public class TextCrusades{
                case "2":
                   p.takeDamage(takenDamage - 5);
                   System.out.printf("You defend from the %s's attack!%n", m.getName());
+                  p.takeDamage(takenDamage);
+                  System.out.printf("the %s attacks you for %d damage!%n", m.getName(), takenDamage);
                   progressBattle = true;
                   break;
                   
@@ -697,7 +704,7 @@ public class TextCrusades{
                   p.heal(5 + (randBouns.nextInt(11) - 5));
                   System.out.printf("You heal yourself%n");
                   p.takeDamage(takenDamage);
-                  System.out.printf("the %s attack you for %d damage!%n", m.getName(), takenDamage);
+                  System.out.printf("But the %s attacked you for %d damage!%n", m.getName(), takenDamage);
                   progressBattle = true;
                   break;
                   
@@ -710,7 +717,7 @@ public class TextCrusades{
           System.out.printf("%n%n");
           p.checkAlive();
           m.checkAlive();
-          System.out.println(m.getAlive() + " " + p.getAlive());
+          //System.out.println(m.getAlive() + " " + p.getAlive());
           
       }while((m.getAlive() == true) && (p.getAlive() == true));
       
@@ -718,10 +725,8 @@ public class TextCrusades{
         System.out.printf("You defeated the %s", m.getName());
       }
       else{
-      System.out.println("You died game over");
+      System.out.printf("%nYou died.%n Game Over");
       System.exit(0);
       }
    }    
 }
-
-
