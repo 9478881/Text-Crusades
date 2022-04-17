@@ -4,9 +4,10 @@ import java.util.Random;
 public class TextCrusades{
    public static void main(String[] args){
    
-      
-      String[] names = {"Goblin", "Ghost", "devil", "skeleton", "hobgoblin", "Bugbear", "Demon"};
+      Random rand = new Random();
       Scanner input = new Scanner(System.in);
+      String[] names = {"Goblin", "Ghost", "devil", "skeleton", "hobgoblin", "Bugbear", "Demon","BOSS_TROLL"};
+    
       String name = "Bob";
       String weapon = "AK-47";
       //intro to story
@@ -51,7 +52,7 @@ public class TextCrusades{
           }    
          }while (Select != true);
         
-
+        /*
          Thread.sleep(1500); //Delay. Time in milliseconds 
          System.out.printf("It was a beautiful morning... %n");
          Thread.sleep(1500);
@@ -147,7 +148,7 @@ public class TextCrusades{
          }while (Select != true);         
          System.out.printf("%n... Amazing choice!%n");   
          Thread.sleep(800);
-         System.out.printf("%nNow you step towards the drawbridge, ready to go on in your adventure to find the queen.%nEveryone depends on you, so you better not fail them.");
+         System.out.printf("%nNow you step towards the drawbridge, ready to go on in your adventure to find the princess.%nEveryone depends on you, so you better not fail them.");
          Thread.sleep(3500);
          System.out.printf("%n%n%nlooser%n%n");
          Thread.sleep(1000);
@@ -168,17 +169,20 @@ public class TextCrusades{
          //tutorial
          tutorial();                   
          Thread.sleep(7000);
+         */
+       
+        
          //public Player(String name, int health, int damage, int defense)
-         //Conveyor Conveyor1 = new Conveyor("flat belt", 0.9);
+         Player player1 = new Player(name, 150, 20, 5);
+         
          //public Monster( String n, int d, int de, int h)
-         Player player1 = new Player(name, 100, 20, 10);
-         Monster Monster1 = new Monster("Goblin", 30, 10, 50);
+         Monster Monster1 = new Monster(names[0], 10, 5, 50);
          //fight
          combatMenu(player1, Monster1);
          
-         
+         /*
          Thread.sleep(100);
-         System.out.printf("%n%nYou defeated the goblin. He is now dead. You continue walking down the forest %n");
+         System.out.printf("%n%n You continue walking down the forest %n");
          System.out.printf("and you stumble upon two different paths. One of the paths looks spooky and dark,%n");
          System.out.printf("the other trail looks well kept. Which trail would you like to take?%n%n");
          Thread.sleep(4000);
@@ -274,12 +278,12 @@ public class TextCrusades{
                      Thread.sleep(2500);
                      System.out.printf("%n%n[%s]: Alright, fine, here's my money.", name);
                      Thread.sleep(2500);
-                     System.out.printf("%n%n[Unkown man]: You stay the night, the Unkown-man snores throughout the night so you don't get much sleep.");
+                     System.out.printf("%n%n[Unkown man]: You stay the night, the Unknown-man snores throughout the night so you don't get much sleep.");
                   }else{
                      Thread.sleep(3000);
                      System.out.printf("%n%n[%s]: How about you pay me, huh?", name);
                      Thread.sleep(3000);
-                     System.out.printf("%n%n[Unkown man]: Yeah... how about no");
+                     System.out.printf("%n%n[Unknown man]: Yeah... how about no");
                      Thread.sleep(3000);
                      System.out.printf("%n%nThe man shot you.");
                      Thread.sleep(2500);
@@ -306,17 +310,17 @@ public class TextCrusades{
                   }    
                   }while (Select != true);
                   if(useweapon == "nomoney"){
-                     System.out.printf("%n%n[%s]: No idot, I ain't paying that. You pulled out your weapon, threaten me, and expect me to pay? Plus, I only have 5 gold.", name);
+                     System.out.printf("%n%n[%s]: No Bro, I ain't paying that. You pulled out your weapon, threaten me, and expect me to pay? Plus, I only have 5 gold.", name);
                      Thread.sleep(3000);
-                     System.out.printf("%n%n[Unkown man]: Fine, you can pay 5 gold pieces and stay the night.");
+                     System.out.printf("%n%n[Unknown man]: Fine, you can pay 5 gold pieces and stay the night.");
                      Thread.sleep(2500);
                      System.out.printf("%n%n[%s]: Alright, fine, here's my money.", name);
                      Thread.sleep(2500);
-                     System.out.printf("%n%nYou stay the night, the Unkown-man snores throughout the night so you don't get much sleep.");
+                     System.out.printf("%n%nYou stay the night, the Unknown-man snores throughout the night so you don't get much sleep.");
                   }else{
                      System.out.printf("%n%n[%s]: How about you pay me, huh?", name);
                      Thread.sleep(2000);
-                     System.out.printf("%n%n[Unkown man]: Yeah... how about no");
+                     System.out.printf("%n%n[Unknown man]: Yeah... how about no");
                      Thread.sleep(2000);
                      System.out.printf("%n%nThe man shot you.");
                      Thread.sleep(2000);
@@ -418,6 +422,7 @@ public class TextCrusades{
                System.exit(1);
             }
          }
+         */
          Thread.sleep(3000);
          System.out.printf("%n%nThe next day you wake up and continue your way to find the princess.");
          Thread.sleep(3000);
@@ -433,6 +438,74 @@ public class TextCrusades{
          Thread.sleep(2000);
          System.out.printf("There are three ways to go the forest, across the lake, or the hill with the ring of trees%n%n");
          Select = false;
+         String location = "no choice yet";
+            do{threeChoices();
+            String selection2 = input.next();
+            
+            switch (selection2){
+               case "1":
+                  Select = true;
+                  location = "forest";
+                  break;
+               case "2":
+                  Select = true;
+                  location = "lake";
+                  break;
+               case "3":
+                  Select = true;
+                  location = "hill";
+                  break;
+               default:
+                  System.out.printf("Please select a valid input%n%n");
+                  break;
+            }    
+            }while (Select != true);
+            
+            if(location == "forest"){
+               //public Monster( String n, int d, int de, int h)
+                Monster Monster3 = new Monster(names[1], 10, 5, 75);
+               System.out.printf("The forest seems to drain light from it as you walk in.%n%n");
+               Thread.sleep(2000);
+               System.out.printf("It seems to be the fastest way however so hopefully you can make it through quickly.%n%n");
+               Thread.sleep(2000);
+               System.out.printf("As you continue walking, the ground starts to feel cold.%n%n");
+               Thread.sleep(2000);
+               System.out.printf("It was midday outside before so its strange that it was getting cold%n%n");
+               Thread.sleep(2000);
+               System.out.printf("In front of you there is a shadowy figure.%n%n");
+               Thread.sleep(2000);
+               System.out.printf("They point a finger at you and start to run at you%n%n");
+               Thread.sleep(2000);
+               System.out.printf("It looks like you'll have to fight your way out of this%n%n");
+               Thread.sleep(2000);
+               tutorial();
+               System.out.println("The fight scene begins");
+               Thread.sleep(5000);
+               combatMenu(player1, Monster3);
+            }
+            else if(location == "lake"){
+            System.out.printf("As you walk towards the boat you realize how large the lake is%n%n");
+            Thread.sleep(2000);
+            System.out.printf("You get in the boat and start rowing%n%n");
+            Thread.sleep(2000);
+            System.out.printf("You notice there are some ripples in the otherwise unmoving water%n%n");
+            Thread.sleep(2000);
+            System.out.printf("Out of the corner of your eyes you see a flipper go underneath the boat%n%n");
+            Thread.sleep(2000);
+            System.out.printf("The boat starts rocking back and forth%n%n");
+            Thread.sleep(2000);
+            System.out.printf("All of a sudden the boat is flipped and you are drowned by merpeople%n%n");
+            Thread.sleep(2000);
+            System.out.printf("Game over");
+            }
+            else if (location == "hill"){
+               System.out.printf("As you walk forward up the hill you hear some enchanting music%n%n");
+               Thread.sleep(2000);
+               System.out.printf("When you reach the top of the hill you see a potion in a bottle and music seems to be coming from it%n%n");
+               Thread.sleep(2000);
+               
+               /*
+                  Select = false;
          String location = "no choice yet";
             do{threeChoices();
             selection = input.next();
@@ -453,62 +526,30 @@ public class TextCrusades{
                default:
                   System.out.printf("Please select a valid input%n%n");
                   break;
-            }    
-            }while (Select != true);
-            if(location == "forest"){
-               System.out.printf("The forest seems to drain light from it as you walk in.%n%n");
-               Thread.sleep(2000);
-               System.out.printf("It seems to be the fastest way however so hopefully you can make through quickly.%n%n");
-               Thread.sleep(2000);
-               System.out.printf("As you continue walking, the ground starts to feel cold.%n%n");
-               Thread.sleep(2000);
-               System.out.printf("It was midday outside before so its strange that it was getting cold%n%n");
-               Thread.sleep(2000);
-               System.out.printf("In front of you there is a shadowy figure.%n%n");
-               Thread.sleep(2000);
-               System.out.printf("They point a finger at you and start to run at you%n%n");
-               Thread.sleep(2000);
-               System.out.printf("It looks like you'll have to fight your way out of this%n%n");
-               Thread.sleep(2000);
-               tutorial();
-               System.out.println("The fight scene begins");
-               Thread.sleep(5000);
-               //have to put combat here
-            }
-            else if(location == "lake"){
-            System.out.printf("As you walk towards the boat you realize how large the lake is%n%n");
-            Thread.sleep(2000);
-            System.out.printf("You get in the boat and start rowing%n%n");
-            Thread.sleep(2000);
-            System.out.printf("You notice there are some ripples in the otherwise unmoving water%n%n");
-            Thread.sleep(2000);
-            System.out.printf("Out of the corner of your eyes you see a flipper go underneath the boat%n%n");
-            Thread.sleep(2000);
-            System.out.printf("The boat starts rocking back and forth%n%n");
-            Thread.sleep(2000);
-            System.out.printf("All of a sudden the boat is flipped and you are drowned by merpeople%n%n");
-            Thread.sleep(2000);
-            System.out.printf("Game over");
-            }
-            else if (location == "hill"){
-               System.out.printf("As you walk forward up the hill you hear some enchanting music%n%n");
-               Thread.sleep(2000);
-               System.out.printf("When you reach the top of the hill you see a potion in a bottle and music seems to emanating from it%n%n");
-               Thread.sleep(2000);
-               takePotion();
-            
-               Select = false;
+                  */
+                  
+               //public Monster( String n, int d, int de, int h)
+         Monster Monster2 = new Monster(names[2], 10, 5, 50);
+              boolean Select1 = false;
+               String location1 = "no choice yet";
                do{takePotion();
-                  String location1 = "no choice yet";
-                  switch (selection){
-               case "1":
-                  Select = true;
-                  location1 = "take";
-                  break;
-               case "2":
-                  Select = true;
+                  String selection1 = input.next();
+                  switch (selection1){
+                  case "1":
+                  Select1 = true;
                   location1 = "dontTake";
                   break;
+               case "2":
+                  Select1 = true;
+                  location1 = "take";
+                  System.out.printf("As you take the potion, everything turns darker and you see%n%n");
+                  System.out.printf("something run up the hill and is coming to attack you%n%n");
+                  System.out.printf("Your going to have to fight this monster for the potion%n%n");
+                     
+                     combatMenu(player1, Monster2);
+                  break;
+                  
+               
                default:
                   System.out.printf("Please select a valid input%n%n");
                   break;
@@ -516,11 +557,42 @@ public class TextCrusades{
 
                   }
             
-               }while(Select != true);
-            
+               }while(Select1 != true);
+             
              }
       
-    
+      System.out.printf("You have finally reached the castle%n%n");
+      System.out.printf("Is is very tall and there are two goblin guards up front%n%n");
+      System.out.printf("You will have to fight the guards.%n%n");
+      System.out.printf("You run up to the drawbridge and pull out your weapon to start to fight them%n%n");
+      //public Monster( String n, int d, int de, int h)
+         Monster Monster4 = new Monster(names[0], 10, 5, 50);
+         Monster Monster5 = new Monster(names[0], 10, 5, 50);
+      combatMenu(player1, Monster4);
+      System.out.printf("Nice job you killed one of the guards, now you have to take on the other");
+      combatMenu(player1, Monster5);
+      System.out.printf("Good job, now go find the princess in the castle.%n%n");
+      System.out.printf("You walk up the stairs and find a throne room with no one guarding it.%n%n");
+      System.out.printf("You enter the room and you a tall troll that must be at least twice your height who is snoring loudly.%n");
+      System.out.printf("You see the princess in a cage in a corner who is also asleep.%n");
+      System.out.printf("You decide your going to try to sneak over to the princess and sneak her out.%n");
+      System.out.printf("You get over to the cage and say, princess, princess, wake up.%n");
+      System.out.printf("She wakes up eyes wide open");
+      System.out.printf("What are you doing here?");
+      System.out.printf("I've come to save you!");
+      System.out.printf("You can't the troll king will kill you.");
+      System.out.printf("No, I will save you!");
+      System.out.printf("Your going to have to get the key first!");
+      System.out.printf("You you see the Troll has a key around his neck for the cage");
+      System.out.printf("No matter, I will get it and get you out of here");
+      System.out.printf("You walk over to the troll and very carefully walk up his belly");
+      System.out.printf("The troll snores peacefully still, very carefully with a knife you have, you cut the rope with they key on it.");
+      System.out.printf("But then, the troll wakes up with a roar");
+      System.out.printf("WHO HAS COME TO STEAL MY TREASURE!");
+      System.out.printf("The troll stands up and starts to fight you");
+      System.out.printf("FINAL BOSS FIGHT");
+      Monster Monster6= new Monster(names[7],20,5,100);
+      combatMenu(player1, Monster6);
       }
       catch(InterruptedException e){
       System.err.println(e.getMessage());
@@ -668,6 +740,7 @@ public class TextCrusades{
       }
       else{
       System.out.println("You died game over");
+      System.exit(0);
       }
    }    
 }
