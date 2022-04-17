@@ -12,7 +12,7 @@ import java.util.Random;
 public class TextCrusades{
    public static void main(String[] args){
    
-      Random rand = new Random();
+
       Scanner input = new Scanner(System.in);
       String[] names = {"Goblin", "Ghost", "devil", "skeleton", "hobgoblin", "Bugbear", "Demon","BOSS TROLL"};
     
@@ -561,46 +561,46 @@ public class TextCrusades{
          Monster Monster5 = new Monster(names[0], 10, 5, 50);
       combatMenu(player1, Monster4);
       System.out.printf("%nNice job you killed one of the guards, now you have to take on the other%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       combatMenu(player1, Monster5);
-      System.out.printf("%nGood job, now go find the princess in the castle.%n%n");
-      Thread.sleep(4000);
+      System.out.printf("%n%nGood job, now go find the princess in the castle.%n%n");
+      Thread.sleep(2500);
       System.out.printf("You walk up the stairs and find a throne room with no one guarding it.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("You enter the room and you see a tall troll that must be at least twice your height who is snoring loudly.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("You see the princess in a cage in a corner who is also asleep.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("You decide your going to try to sneak over to the princess and get her out.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("You get over to the cage and say, princess, princess, wake up.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("She wakes up and her eyes open.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("Princess: What are you doing here?%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("[%s]: Iv'e come to save you%n%n", name);
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("Princess: You can't, the troll King will kill you %n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("[%s]: No, I will save you%n%n", name);
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("Princess: Your going to have to get the key first then%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("You look over to the troll and see the key around his neck%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("[%s]: No matter, I will get it and get you out of here%n%n", name);
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("You walk over to the troll and very carefully walk up his belly%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("The troll snores peacefully still, very carefully with a knife you have, you cut the rope with the key on it.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("But then, the troll wakes up with a roar%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("WHO HAS COME TO STEAL MY TREASURE!%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("The troll stands up and starts to fight you%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("FINAL BOSS FIGHT%n%n");
       
       //public Player(String name, int health, int damage, int defense)
