@@ -3,8 +3,8 @@
 * Date :04/17/22
 * Assignment: Final Project, Josue worked on the first half of the main from lines 1-430, 
 Brigham did the second half from lines 431-659 and made the monster class. Also making the game menu and putting
- in the combat scenarios into the code.Justin did the player class and modified the monster class so it would
-  work for the combat menu with also doing the combat menu. Justin also got the first switch statment working which we used for a lot of the code.
+ in the combat scenarios into the code.Justin did the player class and the combat menu and modified the Monster
+ class to work with the combat menu. Justin also got the first switch statment working which we used for a lot of the code.
 ******************************************/
 import java.util.Scanner;
 import java.util.Random;
@@ -16,8 +16,8 @@ public class TextCrusades{
       Scanner input = new Scanner(System.in);
       String[] names = {"Goblin", "Ghost", "devil", "skeleton", "hobgoblin", "Bugbear", "Demon","BOSS TROLL"};
     
-      String name = "Bob";
-      String weapon = "AK-47";
+      String name = "Unknown";
+      String weapon = "Unknown";
       //intro to story
       
       try{
@@ -113,7 +113,6 @@ public class TextCrusades{
          System.out.printf("%n%n%n");
          Thread.sleep(800);
          System.out.printf("%n%n%n%n");
-         
                   
          
          System.out.printf("Enter your Username: ");
@@ -154,7 +153,7 @@ public class TextCrusades{
                   System.out.printf("Please select a valid input%n%n");
                   break;
           }    
-         }while (Select != true);         
+         }while (Select != true);        
          System.out.printf("%n... Amazing choice!%n");   
          Thread.sleep(800);
          System.out.printf("%nNow you step towards the bridge, ready to go on in your adventure to find the princess.%nEveryone depends on you, so you better not fail them.");
@@ -673,7 +672,7 @@ public class TextCrusades{
       System.out.printf(" corresponds to each option to select them.%n Good Luck!");
       System.out.printf("%n========================================================================%n");                    
    }
-         //fight
+     
    public static void takePotion(){
    System.out.println("           Would you like to take the potion? ");
    System.out.println("               No......1                          ");
@@ -699,10 +698,6 @@ public class TextCrusades{
          System.out.printf("___________________________________________________________________________%n");
          System.out.printf("___________________________________________________________________________%n");
          System.out.printf("%-34s %-34s %-34s%n", "ATTACK(1)", "BLOCK(2)", "HEAL(3)");
-         //System.out.printf("                            Enter 1 to ATTACK                              %n");
-         //System.out.printf("                            Enter 2 to BLOCK                               %n");
-         //System.out.printf("                            Enter 3 to HEAL                                %n");
-         
          
          
          int dealDamage = p.getDamage() + (randBouns.nextInt(11) - 5);
