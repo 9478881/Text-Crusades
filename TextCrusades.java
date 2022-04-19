@@ -14,6 +14,7 @@ public class TextCrusades{
    
 
       Scanner input = new Scanner(System.in);
+      Random randM = new Random();
       String[] names = {"Goblin", "Ghost", "devil", "skeleton", "hobgoblin", "Bugbear", "Demon","BOSS TROLL"};
     
       String name = "Unknown";
@@ -541,11 +542,11 @@ public class TextCrusades{
                }while(Select1 != true);    
           }
       System.out.printf("%nYou have finally reached the castle%n%n");
-      System.out.printf("Is is very tall and there are two goblin guards up front%n%n");
+      System.out.printf("Is is very tall and there are two guards up front%n%n");
       System.out.printf("You will have to fight the guards.%n%n");
       System.out.printf("You run up to the drawbridge and pull out your weapon to start to fight them%n%n");
-      Monster Monster4 = new Monster(names[0], 10, 5, 50);
-      Monster Monster5 = new Monster(names[0], 10, 5, 50);
+      Monster Monster4 = new Monster(names[randM.nextInt(7)], 10, 5, 50);
+      Monster Monster5 = new Monster(names[randM.nextInt(7)], 10, 5, 50);
       combatMenu(player1, Monster4);
       System.out.printf("%nNice job you killed one of the guards, now you have to take on the other%n%n");
       Thread.sleep(4000);
