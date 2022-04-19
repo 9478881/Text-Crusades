@@ -75,7 +75,9 @@ public class TextCrusades{
          Thread.sleep(1500);
          System.out.printf("%n%n[King]: THE PRINCESS HAS BEEN KIDNAPPED");
          Thread.sleep(2000);
-         System.out.printf("%n%nThe monsters leave with the princess, and with the king completely devastated %nby his daughter's kidnapping. You, as the second in charge, must go and save %nthe princess from the hands of the evil monsters. ");
+         System.out.printf("%n%nThe monsters leave with the princess, and with the king completely devastated ");
+         System.out.printf("%nby his daughter's kidnapping. You, as the second in charge, must go and save %n");
+         System.out.printf("the princess from the hands of the evil monsters.");
          Thread.sleep(4500);
          System.out.printf("%n%n%n");
          Thread.sleep(800);
@@ -536,12 +538,9 @@ public class TextCrusades{
                      default:
                         System.out.printf("Please select a valid input%n%n");
                         break;
-                  
-
                   }
                }while(Select1 != true);    
           }
-      
       System.out.printf("%nYou have finally reached the castle%n%n");
       System.out.printf("Is is very tall and there are two goblin guards up front%n%n");
       System.out.printf("You will have to fight the guards.%n%n");
@@ -593,11 +592,12 @@ public class TextCrusades{
       System.out.printf("FINAL BOSS FIGHT%n%n");
       
 
-      Monster Monster6= new Monster(names[7],20,5,100);
+      Monster Monster6 = new Monster(names[7],20,5,100);
+      Monster Monster7= new Monster(names[7], 15, 5, 100);
       if(location1 == "take"){
          System.out.println("Oh look, you have a potion from earlier, hurry, take it, it will increase your health");
          Player player2 = new Player(name, 100, 20, 5);
-         combatMenu(player2, Monster6);
+         combatMenu(player2, Monster7);
       }
       else{
          combatMenu(player1, Monster6);
@@ -669,7 +669,7 @@ public class TextCrusades{
       System.out.printf("%n============================Quick-Tutorial==============================%n");
       System.out.printf(" Your stats will be displayed at the left side of the screen. Your enemy%n"); 
       System.out.printf(" stat's will be displayed on the right. You will be provided with 4%n");
-      System.out.printf(" options underneath the stats. Press your keyboard buttons (1,2,3,4) that%n"); 
+      System.out.printf(" options underneath the stats. Press your keyboard buttons (1,2,3,) that%n"); 
       System.out.printf(" corresponds to each option to select them.%n Good Luck!");
       System.out.printf("%n========================================================================%n");                    
    }
