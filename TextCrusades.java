@@ -12,6 +12,8 @@ import java.util.Random;
 public class TextCrusades{
    public static void main(String[] args){
    
+   
+   
 
       Scanner input = new Scanner(System.in);
       Random randM = new Random();
@@ -60,10 +62,12 @@ public class TextCrusades{
           }    
          }while (Select != true);
         
+         String s = " ";
          
          Thread.sleep(1500); //Delay. Time in milliseconds 
          System.out.printf("It was a beautiful morning... %n");
-         Thread.sleep(1500);
+         //Thread.sleep(1500);
+          s = input.next();
          System.out.printf("The birds were singing %n");
          Thread.sleep(1500);
          System.out.printf("The sky was blue %n");
