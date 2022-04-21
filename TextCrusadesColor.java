@@ -5,25 +5,13 @@
 Brigham did the second half from lines 431-659 and made the monster class. Also making the game menu and putting
  in the combat scenarios into the code.Justin did the player class and the combat menu and modified the Monster
  class to work with the combat menu. Justin also got the first switch statment working which we used for a lot of the code.
-******************************************/
+*****************************************/
 import java.util.Scanner;
 import java.util.Random;
 
-public class TextCrusadesColor{
+public class TextCrusades{
    public static void main(String[] args){
    
-   
-   
-      //w is white
-      String w = "\u001B[37m";
-      //b is blue
-      String b = "\u001B[36m";
-      //y is yellow
-      String y = "\u001B[33m";
-      //g is green
-      String g = "\u001B[32m";
-      //r is red
-      String r = "\u001B[31m";
 
       Scanner input = new Scanner(System.in);
       Random randM = new Random();
@@ -34,7 +22,7 @@ public class TextCrusadesColor{
       //intro to story
       
       try{
-    
+         
          Thread.sleep(800);
          Instructions();
          Thread.sleep(800);
@@ -74,11 +62,11 @@ public class TextCrusadesColor{
         
          
          Thread.sleep(1500); //Delay. Time in milliseconds 
-         System.out.printf(g +"It was a beautiful morning... %n" + w );
+         System.out.printf("It was a beautiful morning... %n");
          Thread.sleep(1500);
-         System.out.printf(g+ "The birds were singing %n"+w);
+         System.out.printf("The birds were singing %n");
          Thread.sleep(1500);
-         System.out.printf(b+"The sky was blue %n"+w);
+         System.out.printf("The sky was blue %n");
          Thread.sleep(1500);
          System.out.printf("And your village was getting raided by monsters");
          Thread.sleep(1500);
@@ -104,17 +92,17 @@ public class TextCrusadesColor{
          Thread.sleep(800);
          System.out.printf("%n%n%n");
          Thread.sleep(800);
-         System.out.printf(y+ " _    _      _                            _          _____         _     _____                          _         %n"+w);
+         System.out.printf(" _    _      _                            _          _____         _     _____                          _         %n");
          Thread.sleep(800);
-         System.out.printf(y+"| |  | |    | |                          | |        |_   _|       | |   /  __ \\                        | |        %n"+w);
+         System.out.printf("| |  | |    | |                          | |        |_   _|       | |   /  __ \\                        | |        %n");
          Thread.sleep(800);
-         System.out.printf(y+ "| |  | | ___| | ___ ___  _ __ ___   ___  | |_ ___     | | _____  _| |_  | /  \\/_ __ _   _ ___  __ _  __| | ___  __%n"+w);
+         System.out.printf("| |  | | ___| | ___ ___  _ __ ___   ___  | |_ ___     | | _____  _| |_  | /  \\/_ __ _   _ ___  __ _  __| | ___  __%n");
          Thread.sleep(800);
-         System.out.printf(y+"| |/\\| |/ _ \\ |/ __/ _ \\| '_ ` _ \\ / _ \\ | __/ _ \\    | |/ _ \\ \\/ / __| | |   | '__| | | / __|/ _` |/ _` |/ _ \\/ __|%n"+w);
+         System.out.printf("| |/\\| |/ _ \\ |/ __/ _ \\| '_ ` _ \\ / _ \\ | __/ _ \\    | |/ _ \\ \\/ / __| | |   | '__| | | / __|/ _` |/ _` |/ _ \\/ __|%n");
          Thread.sleep(800);
-         System.out.printf(y+"\\  /\\  /  __/ | (_| (_) | | | | | |  __/ | || (_) |   | |  __/>  <| |_  | \\__/\\ |  | |_| \\__ \\ (_| | (_| |  __/\\__ \\%n"+w);
+         System.out.printf("\\  /\\  /  __/ | (_| (_) | | | | | |  __/ | || (_) |   | |  __/>  <| |_  | \\__/\\ |  | |_| \\__ \\ (_| | (_| |  __/\\__ \\%n");
          Thread.sleep(800);
-         System.out.printf(y+" \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/    \\_/\\___/_/\\_\\\\__|  \\____/_|   \\__,_|___/\\__,_|\\__,_|\\___||___/"+w);
+         System.out.printf(" \\/  \\/ \\___|_|\\___\\___/|_| |_| |_|\\___|  \\__\\___/    \\_/\\___/_/\\_\\\\__|  \\____/_|   \\__,_|___/\\__,_|\\__,_|\\___||___/ copyright(2022)");
          System.out.printf("%n%n%n");
          Thread.sleep(800);
          System.out.printf("%n%n%n");
@@ -195,7 +183,12 @@ public class TextCrusadesColor{
        
          
          //public Player(String name, int health, int damage, int defense)
-         Player player1 = new Player(name, 150, 20, 5);
+         Player player1;
+         if(weapon == "Iron Sword"){
+         player1 = new Player(name, 150, 35, 5);
+         }else{
+         player1 = new Player(name, 150, 20, 5);
+         }
          
          //public Monster( String n, int d, int de, int h)
          Monster Monster1 = new Monster(names[0], 15,5, 75);
@@ -502,8 +495,7 @@ public class TextCrusadesColor{
                Thread.sleep(2000);
                System.out.printf("It looks like you'll have to fight your way out of this%n%n");
                Thread.sleep(2000);
-               tutorial();
-               System.out.println("The fight scene begins");
+               System.out.println("%n%nThe fight scene begins%n%n%n");
                Thread.sleep(5000);
                combatMenu(player1, Monster3);
             }
@@ -553,63 +545,120 @@ public class TextCrusadesColor{
                   }
                }while(Select1 != true);    
           }
-      System.out.printf("%nYou have finally reached the castle%n%n");
+      Thread.sleep(2000);
+      System.out.printf("%n%nYou have finally reached the castle%n%n");
+      Thread.sleep(2000);
       System.out.printf("Is is very tall and there are two guards up front%n%n");
+      Thread.sleep(2000);
       System.out.printf("You will have to fight the guards.%n%n");
-      System.out.printf("You run up to the drawbridge and pull out your weapon to start to fight them%n%n");
+      Thread.sleep(1500);
+      System.out.printf("You run up to the drawbridge and pull out your weapon to start to fight them%n%n%n");
+      Thread.sleep(2000);
       Monster Monster4 = new Monster(names[randM.nextInt(7)], 10, 5, 50);
       Monster Monster5 = new Monster(names[randM.nextInt(7)], 10, 5, 50);
       combatMenu(player1, Monster4);
       System.out.printf("%nNice job you killed one of the guards, now you have to take on the other%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2000);
       combatMenu(player1, Monster5);
       System.out.printf("%nGood job, now go find the princess in the castle.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("You walk up the stairs and find a throne room with no one guarding it.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("You enter the room and you see a tall troll that must be at least twice your height who is snoring loudly.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("You see the princess in a cage in a corner who is also asleep.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("You decide your going to try to sneak over to the princess and get her out.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("You get over to the cage and say, princess, princess, wake up.%n%n");
-      Thread.sleep(4000);
+      Thread.sleep(2500);
       System.out.printf("She wakes up and her eyes open.%n%n");
-      Thread.sleep(4000);
-      System.out.printf("Princess: What are you doing here?%n%n");
-      Thread.sleep(4000);
-      System.out.printf("[%s]: Iv'e come to save you%n%n", name);
-      Thread.sleep(4000);
-      System.out.printf("Princess: You can't, the troll King will kill you %n%n");
-      Thread.sleep(4000);
-      System.out.printf("[%s]: No, I will save you%n%n", name);
-      Thread.sleep(4000);
-      System.out.printf("Princess: Your going to have to get the key first then%n%n");
-      Thread.sleep(4000);
-      System.out.printf("You look over to the troll and see the key around his neck%n%n");
-      Thread.sleep(4000);
-      System.out.printf("[%s]: No matter, I will get it and get you out of here%n%n", name);
-      Thread.sleep(4000);
-      System.out.printf("You walk over to the troll and very carefully walk up his belly%n%n");
-      Thread.sleep(4000);
-      System.out.printf("The troll snores peacefully still, very carefully with a knife you have, you cut the rope with the key on it.%n%n");
-      Thread.sleep(4000);
-      System.out.printf("But then, the troll wakes up with a roar%n%n");
-      Thread.sleep(4000);
-      System.out.printf("WHO HAS COME TO STEAL MY TREASURE!%n%n");
-      Thread.sleep(4000);
-      System.out.printf("The troll stands up and starts to fight you%n%n");
-      Thread.sleep(4000);
-      System.out.printf("FINAL BOSS FIGHT%n%n");
+      Thread.sleep(2500);
+      System.out.printf("[Princess]: What are you doing here?%n%n");
+      Thread.sleep(2500);
+      System.out.printf("[%s]: I've come to save you%n%n", name);
+      Thread.sleep(2500);
+      System.out.printf("[Princess]: But how? %n%n");
+      Thread.sleep(2500);
       
+      System.out.printf("[%s]: I will ________%n%n",name);
+      String whattosay = "neither";
+      Select = false;
+      do{whattosay();
+         selection = input.next();
+         switch (selection){
+            case "1":
+               Select = true;
+               whattosay = "1";
+               break;
+            case "2":
+               Select = true;
+               whattosay = "2";
+               break;
+            case "3":
+               Select = true;
+               whattosay = "3";
+               break;
+            case "4":
+               Select = true;
+               whattosay = "4";
+               break;
+            default:
+               System.out.printf("Please select a valid input%n%n");
+               break;
+         }    
+      }while (Select != true);
+      if(whattosay == "1"){
+         System.out.printf("[%s]: I'll fight him!%n%n", name);
+         Thread.sleep(2500);
+         System.out.printf("[BOSS TROLL]: You will what mate?%n%n");
+         Thread.sleep(2500);
+         System.out.printf("[%s]: oh oh....", name);
+      }else if(whattosay == "2"){
+         System.out.printf("[%s]: I'll challenge him to a game of Uno!%n%n", name);
+         Thread.sleep(2500);
+         System.out.printf("[BOSS TROLL]: That sounds amazing!!!%n%n");
+         Thread.sleep(2500);
+         System.out.printf("You played Uno against the monster and won!%n%n");
+         Thread.sleep(2500);
+         System.out.printf("[BOSS TROLL]: NO! YOU CHEATED%n%n");
+         Thread.sleep(2500);
+         System.out.printf("The monster got mad at you, and now you have to fight him anyway.%n%n");
+      }else if(whattosay == "3"){
+         System.out.printf("[%s]: ax^2 + bx + c = 0%n%n", name);
+         Thread.sleep(1500);
+         System.out.printf("[BOSS TROLL]: That's not even the quadratic formula%n%n");
+         Thread.sleep(1500);
+         System.out.printf("[%s]: yeah it is%n%n", name);
+         Thread.sleep(1000);
+         System.out.printf("[BOSS TROLL]: No it's not%n%n");
+         Thread.sleep(1000);
+         System.out.printf("[%s]: yeah it is%n%n", name);
+         Thread.sleep(1000);
+         System.out.printf("[BOSS TROLL]: No it's not%n%n");
+         Thread.sleep(1000);
+         System.out.printf("[%s]: yeah it is%n%n", name);
+         Thread.sleep(1000);
+         System.out.printf("[BOSS TROLL]: No it's not%n%n");
+         Thread.sleep(1000);
+         System.out.printf("[BOSS TROLL]: You know what. Fight me%n%n");
+         Thread.sleep(1000);
+         System.out.printf("[%s]: Bet...", name);
+      }else{
+         System.out.printf("[%s]: What do you call Bears without ears?%n%n", name);
+         Thread.sleep(2000);
+         System.out.printf("[%s]: B's!!!%n%n", name);
+         Thread.sleep(2000);
+         System.out.printf("[BOSS TROLL]: I'm just dissapointed.%n%n");
+      }
+      Thread.sleep(2500);
+      System.out.printf("FINAL BOSS FIGHT%n%n");
 
       Monster Monster6 = new Monster(names[7],20,5,100);
-      Monster Monster7= new Monster(names[7], 15, 5, 100);
       if(location1 == "take"){
          System.out.println("Oh look, you have a potion from earlier, hurry, take it, it will increase your health");
-         Player player2 = new Player(name, 100, 20, 5);
-         combatMenu(player2, Monster7);
+         player1.heal(40);
+         combatMenu(player1, Monster6);
       }
       else{
          combatMenu(player1, Monster6);
@@ -637,7 +686,7 @@ public class TextCrusadesColor{
       System.out.println("           >Fists........2         ");
       System.out.println("           >Sandwich.....3         ");
       System.out.println("           >AK-47........4         ");
-   }//end of weapon choice
+   }
    
    public static void pathChoice(){
       System.out.println("         What path do you choose?");
@@ -680,7 +729,7 @@ public class TextCrusadesColor{
    public static void tutorial(){
       System.out.printf("%n============================Quick-Tutorial==============================%n");
       System.out.printf(" Your stats will be displayed at the left side of the screen. Your enemy%n"); 
-      System.out.printf(" stat's will be displayed on the right. You will be provided with 4%n");
+      System.out.printf(" stat's will be displayed on the right. You will be provided with 3%n");
       System.out.printf(" options underneath the stats. Press your keyboard buttons (1,2,3,) that%n"); 
       System.out.printf(" corresponds to each option to select them.%n Good Luck!");
       System.out.printf("%n========================================================================%n");                    
@@ -696,6 +745,14 @@ public class TextCrusadesColor{
        System.out.printf("  The games controls will be using the keyboard (1,2,3,4) to allow you to do things");
        System.out.printf("%n=====================================================================================%n");
    }
+   public static void whattosay(){
+      System.out.println("           What would you like to say?");
+      System.out.println("               >Fight him!.........................1                          ");
+      System.out.println("               >Challenge him to a game of Uno.....2                          ");
+      System.out.println("               >Teach him the quadratic formula....3                          ");
+      System.out.println("               >Tell him the bear joke.............4                          ");
+
+   }
    public static void combatMenu(Player p, Monster m){
       Scanner action = new Scanner(System.in);
       Random randBouns = new Random();
@@ -710,7 +767,7 @@ public class TextCrusadesColor{
          System.out.printf("%n%n");
          System.out.printf("___________________________________________________________________________%n");
          System.out.printf("___________________________________________________________________________%n");
-         System.out.printf("%-34s %-34s %-34s%n", "ATTACK(1)", "BLOCK(2)", "HEAL(3)");
+         System.out.printf("%-34s %-33s %-32s%n", "ATTACK(1)", "BLOCK(2)", "HEAL(3)");
          
          
          int dealDamage = p.getDamage() + (randBouns.nextInt(11) - 5);
@@ -753,7 +810,6 @@ public class TextCrusadesColor{
           System.out.printf("%n%n");
           p.checkAlive();
           m.checkAlive();
-          //System.out.println(m.getAlive() + " " + p.getAlive());
           
       }while((m.getAlive() == true) && (p.getAlive() == true));
       
