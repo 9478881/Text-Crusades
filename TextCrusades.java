@@ -29,7 +29,7 @@ public class TextCrusades{
          String selection = "default";
          boolean Select = false;
          String main;   
-         do{mainMenu();
+         do{mainMenu(); 
          
          
          selection = input.next();
