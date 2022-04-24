@@ -29,7 +29,7 @@ public class TextCrusades{
          String selection = "default";
          boolean Select = false;
          String main;   
-         do{mainMenu(); 
+         do{mainMenu();
          
          
          selection = input.next();
@@ -185,7 +185,7 @@ public class TextCrusades{
          //public Player(String name, int health, int damage, int defense)
          Player player1;
          if(weapon == "Iron Sword"){
-         player1 = new Player(name, 150, 35, 5);
+         player1 = new Player(name, 150, 30, 5);
          }else{
          player1 = new Player(name, 150, 20, 5);
          }
@@ -535,8 +535,11 @@ public class TextCrusades{
                         Select1 = true;
                         location1 = "take";
                         System.out.printf("As you take the potion, everything turns darker and you see%n%n");
+                        Thread.sleep(2000);
                         System.out.printf("something run up the hill coming to attack you%n%n");
+                        Thread.sleep(2000);
                         System.out.printf("Your going to have to fight this monster for the potion%n%n");
+                        Thread.sleep(1000);
                      combatMenu(player1, Monster2);
                         break;
                      default:
@@ -657,12 +660,26 @@ public class TextCrusades{
       Monster Monster6 = new Monster(names[7],20,5,100);
       if(location1 == "take"){
          System.out.println("Oh look, you have a potion from earlier, hurry, take it, it will increase your health");
-         player1.heal(40);
+         player1.heal(50);
          combatMenu(player1, Monster6);
       }
       else{
          combatMenu(player1, Monster6);
       }
+      Thread.sleep(2000);
+      System.out.printf("%nNow with the Boss deafeated you take the princess back to his father.");
+      Thread.sleep(2000);
+      System.out.printf("%n%n[Princess]: Father!");
+      Thread.sleep(2000);
+      System.out.printf("%n%n[King]: Daughter!");
+      Thread.sleep(2000);
+      System.out.printf("%n%n[King]: Thanks for bringing my daugther back safe.");
+      Thread.sleep(2000);
+      System.out.printf("%n%n[King]: For your amazing bravery and exausting work, %n        I will provide you with the....");
+      Thread.sleep(2000);
+      System.out.printf("%n%nActually we run out of budget, guess you'll never get whatever the King was going to give you.");
+      Thread.sleep(2000);
+      System.out.printf("%n%nGame Over. Thanks for playing!");
      }
       catch(InterruptedException e){
       System.err.println(e.getMessage());
@@ -815,6 +832,7 @@ public class TextCrusades{
       
       if(m.getAlive() == false && p.getAlive() == true){
          System.out.printf("You defeated the %s", m.getName());
+         
       }
       else{
          System.out.printf("%nYou died.%n Game Over");
