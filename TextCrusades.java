@@ -507,7 +507,7 @@ public class TextCrusades{
                Thread.sleep(2000);
                System.out.printf("It looks like you'll have to fight your way out of this%n%n");
                Thread.sleep(2000);
-               System.out.println("%n%nThe fight scene begins%n%n%n");
+               System.out.println("The fight scene begins");
                Thread.sleep(5000);
                //fight monster
                combatMenu(player1, Monster3);
@@ -580,8 +580,8 @@ public class TextCrusades{
       System.out.printf("You run up to the drawbridge and pull out your weapon to start to fight them%n%n%n");
       Thread.sleep(2000);
       //create monster models
-      Monster Monster4 = new Monster(names[randM.nextInt(7)], 10, 5, 50);
-      Monster Monster5 = new Monster(names[randM.nextInt(7)], 10, 5, 50);
+      Monster Monster4 = new Monster(names[randM.nextInt(7)], 5, 5, 50);
+      Monster Monster5 = new Monster(names[randM.nextInt(7)], 5, 5, 50);
       //fight monster
       combatMenu(player1, Monster4);
       System.out.printf("%nNice job you killed one of the guards, now you have to take on the other%n%n");
@@ -757,8 +757,8 @@ public class TextCrusades{
    }
    public static void laughornot(){
       System.out.println("          Huh?");
-      System.out.println("           >Laugh...........................1       ");
-      System.out.println("           >Look at the bear disappointed...2       ");
+      System.out.println("           >Laugh.....................1       ");
+      System.out.println("           >Embrace the awkwardness...2       ");
 
    }
    public static void useweapon(){
@@ -807,10 +807,8 @@ public class TextCrusades{
    }//exept for this, this is the fighting menu, it works out all the logisctics and stats of players and monsters and fighting and all that
    public static void combatMenu(Player p, Monster m){
       Scanner action = new Scanner(System.in);
-      Random randBouns = new Random(); //a random number genrator for extra (or less) damge dealt.
-    
+      Random randBouns = new Random();//a random number genrator for extra (or less) damge dealt.
       do{
-       
          System.out.printf("%-60s        %s%n", p.getName(), m.getName());
          System.out.printf("%-60s_______________%n", "_______________");
          System.out.printf("HP: %-58d      %2s %d%n", p.getHealth(), "HP:", m.getHealth());
@@ -822,16 +820,14 @@ public class TextCrusades{
          System.out.printf("___________________________________________________________________________%n");
          System.out.printf("___________________________________________________________________________%n");
          System.out.printf("%-34s %-33s %-32s%n", "ATTACK(1)", "BLOCK(2)", "HEAL(3)");
-       
          //create 2 variables that take the player and monster bases damage and add a random abount between -5 and 5
          int dealDamage = p.getDamage() + (randBouns.nextInt(11) - 5);
          int takenDamage = m.getDamage() + (randBouns.nextInt(11) - 5);
-         boolean progressBattle = false; //a boolean that keeps the battleChoice while loop running until it's true
-       
+         boolean progressBattle = false;//a boolean that keeps the battleChoice while loop running until it's true
          do{
             String battleChoice = action.nextLine();
             switch (battleChoice){
-             case "1":
+               case "1":
                   m.takeDamage(dealDamage);
                   System.out.printf("You attack the %s for %d damage!%n", m.getName(), dealDamage);
                   p.takeDamage(takenDamage);
@@ -859,8 +855,8 @@ public class TextCrusades{
           }while(progressBattle == false);
           System.out.printf("%n%n");
           p.checkAlive();
-          m.checkAlive(); 
-      }while((m.getAlive() == true) && (p.getAlive() == true)); //if either the player or the monster's health runs out the combat ends
+          m.checkAlive();
+      }while((m.getAlive() == true) && (p.getAlive() == true));//if either the player or the monster's health runs out the combat ends
       if(m.getAlive() == false && p.getAlive() == true){
          System.out.printf("You defeated the %s", m.getName());
       }
