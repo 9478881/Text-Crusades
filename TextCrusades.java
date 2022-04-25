@@ -807,8 +807,10 @@ public class TextCrusades{
    }//exept for this, this is the fighting menu, it works out all the logisctics and stats of players and monsters and fighting and all that
    public static void combatMenu(Player p, Monster m){
       Scanner action = new Scanner(System.in);
-      Random randBouns = new Random();
+      Random randBouns = new Random(); //a random number genrator for extra (or less) damge dealt.
+    
       do{
+       
          System.out.printf("%-60s        %s%n", p.getName(), m.getName());
          System.out.printf("%-60s_______________%n", "_______________");
          System.out.printf("HP: %-58d      %2s %d%n", p.getHealth(), "HP:", m.getHealth());
@@ -820,13 +822,16 @@ public class TextCrusades{
          System.out.printf("___________________________________________________________________________%n");
          System.out.printf("___________________________________________________________________________%n");
          System.out.printf("%-34s %-33s %-32s%n", "ATTACK(1)", "BLOCK(2)", "HEAL(3)");
+       
+         //create 2 variables that take the player and monster bases damage and add a random abount between -5 and 5
          int dealDamage = p.getDamage() + (randBouns.nextInt(11) - 5);
          int takenDamage = m.getDamage() + (randBouns.nextInt(11) - 5);
-         boolean progressBattle = false;
+         boolean progressBattle = false; //a boolean that keeps the battleChoice while loop running until it's true
+       
          do{
             String battleChoice = action.nextLine();
             switch (battleChoice){
-               case "1":
+             case "1":
                   m.takeDamage(dealDamage);
                   System.out.printf("You attack the %s for %d damage!%n", m.getName(), dealDamage);
                   p.takeDamage(takenDamage);
@@ -854,8 +859,8 @@ public class TextCrusades{
           }while(progressBattle == false);
           System.out.printf("%n%n");
           p.checkAlive();
-          m.checkAlive();
-      }while((m.getAlive() == true) && (p.getAlive() == true));
+          m.checkAlive(); 
+      }while((m.getAlive() == true) && (p.getAlive() == true)); //if either the player or the monster's health runs out the combat ends
       if(m.getAlive() == false && p.getAlive() == true){
          System.out.printf("You defeated the %s", m.getName());
       }
