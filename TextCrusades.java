@@ -12,28 +12,27 @@ import java.util.Random;
 public class TextCrusades{
    public static void main(String[] args){
    
-
+      //create instances
       Scanner input = new Scanner(System.in);
       Random randM = new Random();
+      //Array with possible name for monsters, we will get a random name from this list to create a monster that the user will fight
       String[] names = {"Goblin", "Ghost", "devil", "skeleton", "hobgoblin", "Bugbear", "Demon","BOSS TROLL"};
-    
+      //create variables that will be used later
       String name = "Unknown";
       String weapon = "Unknown";
       //intro to story
-      
+      //try and catch are used to get the Thread.sleep command, this will allow us to create a delay between texts to make the game easier to read
       try{
-         
+         //Thread.sleep will be used to create a delay between texts, the numbers in the parenthesis is the delay in milliseconds 
          Thread.sleep(800);
          Instructions();
          Thread.sleep(800);
          String selection = "default";
          boolean Select = false;
-         String main;   
+         String main;
+         //main menu   
          do{mainMenu();
-         
-         
          selection = input.next();
-         
          switch (selection){
             case "1":
                main = "startGame";
@@ -59,9 +58,8 @@ public class TextCrusades{
                break;
           }    
          }while (Select != true);
-        
-         
-         Thread.sleep(1500); //Delay. Time in milliseconds 
+         //start of story 
+         Thread.sleep(1500);  
          System.out.printf("It was a beautiful morning... %n");
          Thread.sleep(1500);
          System.out.printf("The birds were singing %n");
@@ -114,25 +112,20 @@ public class TextCrusades{
          System.out.printf("%n%n%n");
          Thread.sleep(800);
          System.out.printf("%n%n%n%n");
-                  
-         
+         //ask user for player name         
          System.out.printf("Enter your Username: ");
          name = input.next();
-         
          Thread.sleep(800);
          System.out.printf("%n%n%n%n");
          Thread.sleep(800);
          System.out.printf("%n%n%n%n");
          Thread.sleep(800);
          System.out.printf("%n%n%n%n");
-         
+         //first user choice. Simple, to familiarize the user with the game inputs
          System.out.println("And you quest starts, You arm yourself up with...");
-          Select = false;   
+         Select = false;   
          do{weaponChoice();
-         
-         
             selection = input.next();
-         
             switch (selection){
                case "1":
                   weapon = "Iron Sword";
@@ -154,7 +147,8 @@ public class TextCrusades{
                   System.out.printf("Please select a valid input%n%n");
                   break;
           }    
-         }while (Select != true);        
+         }while (Select != true);
+         //continue story        
          System.out.printf("%n... Amazing choice!%n");   
          Thread.sleep(800);
          System.out.printf("%nNow you step towards the bridge, ready to go on in your adventure to find the princess.%nEveryone depends on you, so you better not fail them.");
@@ -179,29 +173,26 @@ public class TextCrusades{
          tutorial();                   
          Thread.sleep(8000);
          System.out.printf("%n%n%n%n");
-         
-       
-         
          //public Player(String name, int health, int damage, int defense)
+         //create player stats/model
          Player player1;
          if(weapon == "Iron Sword"){
          player1 = new Player(name, 150, 30, 5);
          }else{
          player1 = new Player(name, 150, 20, 5);
          }
-         
          //public Monster( String n, int d, int de, int h)
+         //create monster stats/model
          Monster Monster1 = new Monster(names[0], 15,5, 75);
-         //fight
+         //fight menu
          combatMenu(player1, Monster1);
-         
-         
+         //continue story after fight
          Thread.sleep(100);
          System.out.printf("%n%nYou continue walking down the forest %n");
          System.out.printf("and you stumble upon two different paths. One of the paths looks spooky and dark,%n");
          System.out.printf("the other trail looks well kept. Which trail would you like to take?%n%n");
          Thread.sleep(4000);
-         
+         //ask user for path choice
          String path = "neither";
          Select = false;
          do{pathChoice();
@@ -219,13 +210,14 @@ public class TextCrusades{
                   break;
             }    
          }while (Select != true); 
-         
+         //if the user chooses the dark path, then this storyline will be shown
          if(path == "DarkPath"){
             System.out.printf("%n%nAs you walk down the dark trail, it gets very muddy and you can see the moon rising overhead.%n");
             System.out.printf("You hear an owl hooting in the distance. You walk up a hill and see a cabin far off. Since it's%n");
             System.out.printf("getting late now you need to find a place to sleep. Are you going into the cabin or are you going%n");
             System.out.printf("to sleep outside?%n%n");
             Thread.sleep(4000);
+            //here the choices are divided again, should she player sleep inside or outside?
             String sleep = "neither";
             Select = false;
             do{sleepChoice();
@@ -243,6 +235,7 @@ public class TextCrusades{
                      break;
                }    
             }while (Select != true);
+            //if the player sleeps inside, then this storyline will play
             if(sleep == "inside"){
                System.out.printf("You chose the cabin. You knock on the cabin door and an old man opens the door with a crossbow in his hand.");
                Thread.sleep(2500);
@@ -252,6 +245,7 @@ public class TextCrusades{
                Thread.sleep(2000);
                System.out.printf("%n%n[Unknown man]: Whatever, you will have to pay 100 gold pieces to stay the night.%n%n");
                Thread.sleep(3000);
+               //if the user chose a AK-47 at the begenning of the game, then they will be given the option to shoot the man
                if(weapon == "AK-47"){
                   String useweapon = "neither";
                   Select = false;
@@ -274,6 +268,7 @@ public class TextCrusades{
                            break;
                      }    
                   }while (Select != true);
+                  //if they choose to shoot, this storyline will play, and then they will die. (Game Over)
                   if(useweapon == "AK-47"){
                      System.out.printf("%n%nYou pulled out your gun. And threaten to shoot the man");
                      Thread.sleep(3000);
@@ -285,6 +280,7 @@ public class TextCrusades{
                      Thread.sleep(3000);
                      System.out.printf("%nGame Over");
                      System.exit(1);
+                  //if they chose to say that they don't have money, then this story line will play   
                   }else if(useweapon == "nomoney"){
                      Thread.sleep(3000);
                      System.out.printf("%n%n[%s]: No idiot, I ain't paying that. You pulled out your weapon, threaten me, and expect me to pay? Plus, I only have 5 gold.", name);
@@ -294,6 +290,7 @@ public class TextCrusades{
                      System.out.printf("%n%n[%s]: Alright, fine, here's my money.", name);
                      Thread.sleep(2500);
                      System.out.printf("%n%n[Unknown man]: You stay the night, the Unknown-man snores throughout the night so you don't get much sleep.");
+                  //if they chose the last option (tell them to pay you), then they die (Game over).
                   }else{
                      Thread.sleep(3000);
                      System.out.printf("%n%n[%s]: How about you pay me, huh?", name);
@@ -305,6 +302,7 @@ public class TextCrusades{
                      System.out.printf("%nGame Over");
                      System.exit(1);
                   }
+               //if the player didn't chose the AK-47 at the begenning, then they will be given the same options as before exept the "Shoot" one.
                }else{
                   String useweapon = "neither";
                   Select = false;
@@ -324,6 +322,7 @@ public class TextCrusades{
                               break;
                      }    
                   }while (Select != true);
+                  //if they chose to say that they don't have money, then this story line will play
                   if(useweapon == "nomoney"){
                      System.out.printf("%n%n[%s]: No Bro, I ain't paying that. You pulled out your weapon, threaten me, and expect me to pay? Plus, I only have 5 gold.", name);
                      Thread.sleep(3000);
@@ -332,6 +331,7 @@ public class TextCrusades{
                      System.out.printf("%n%n[%s]: Alright, fine, here's my money.", name);
                      Thread.sleep(2500);
                      System.out.printf("%n%nYou stay the night, the Unknown-man snores throughout the night so you don't get much sleep.");
+                  //if they chose the last option (tell them to pay you), then they die (Game over).
                   }else{
                      System.out.printf("%n%n[%s]: How about you pay me, huh?", name);
                      Thread.sleep(2000);
@@ -342,13 +342,15 @@ public class TextCrusades{
                      System.out.printf("%nGame Over");
                      System.exit(1);
                   }
-               }      
+               }
+            //if the player chose to sleep outside, they die.      
             }else{
-               System.out.printf("%nYou decided to sleep outside. But you got attacked by a walking-fish and died.");
+               System.out.printf("%nYou decided to sleep outside. But you got attacked by a walking-fish with a bat, and died.");
                Thread.sleep(2000);
                System.out.printf("%nGame Over");
                System.exit(1);
             }
+         //if the player chose the nice trail, then this storyline will play.
          }else{
             System.out.printf("%nYou enter the trail and start walking.");
             Thread.sleep(2000);
@@ -367,6 +369,7 @@ public class TextCrusades{
             System.out.printf("%n%nBut then you look behind you");
             Thread.sleep(2000);
             System.out.printf("%n%nTurns out the cave you were going to spend the night in, is the home of a bear");
+            //if the player chose the sandwitc as a weapon at the begenning, then this storyline will play.
             if(weapon == "Sandwich"){
                Thread.sleep(3500);
                System.out.printf("%n%nBut you realized you have a sandwich!");
@@ -378,6 +381,7 @@ public class TextCrusades{
                System.out.printf("%n%n[%s]: Yeah! It's so beautiful outside.", name);
                Thread.sleep(2000);
                System.out.printf("%n%n[Bear]: I know! This is why I love spring. Hey wanna hear a joke?%n%n");
+               //ask the user if they want to hear the joke or not
                String joke = "neither";
                Select = false;
                do{joke();
@@ -395,8 +399,10 @@ public class TextCrusades{
                         break;
                   }    
                }while (Select != true);
+               //if they said yes, then this storyline will play
                if(joke == "yes"){
                   System.out.printf("%n%n[Bear]: What do you call bears without ears? B's%n%n");
+                  //ask the player if they want to laugh at the joke or not
                   String laughornot = "neither";
                   Select = false;
                   do{laughornot();
@@ -414,23 +420,27 @@ public class TextCrusades{
                            break;
                      }    
                   }while (Select != true);
+                  //if they decide to laugh at the joke, then this storyline happens
                   if(laughornot == "yes"){
                      System.out.printf("%n%n[%s]: HaHaHahaha-ha-a....", name);
                      Thread.sleep(2500);
                      System.out.printf("%n%nThe bear let you sleep in his cave. He told you a bedtime story, and gave you a good night's kiss.");
+                  //if they don't laugh at the joke then they die. Game Over
                   }else{
-                     System.out.printf("%n%nYeah I would do that too...");
-                     Thread.sleep(2000);
-                     System.out.printf("%n%nBut anyway. The bear got mad at you for not lauging at his joke. So he killed you...");
+                     System.out.printf("%n%n...");
+                     Thread.sleep(2500);
+                     System.out.printf("%n%nAnyway... The bear got mad at you for not lauging at his joke. So he killed you...");
                      Thread.sleep(2000);
                      System.out.printf("%nGame Over");
                      System.exit(1);
                   }
+               //if the user decides not to laugh at the joke, this storyline happens
                }else{
                   System.out.printf("%n%n[Bear]: :(");
                   Thread.sleep(2000);
                   System.out.printf("%n%nThe bear was mad at you the rest of the night. But he let you sleep in his cave.");
                }
+            //if the player wasn't carrying the sandwich... Game over.
             }else{
                Thread.sleep(2500);
                System.out.printf("%n%nThe bear rips you apart and eats you");
@@ -439,7 +449,7 @@ public class TextCrusades{
                System.exit(1);
             }
          }
-         
+         //story continues
          Thread.sleep(3000);
          System.out.printf("%n%nThe next day you wake up and continue on your way to find the princess.");
          Thread.sleep(3000);
@@ -454,6 +464,7 @@ public class TextCrusades{
          System.out.printf("But there is also a rowboat that it looks like you can use to get across the lake%n%n");
          Thread.sleep(2000);
          System.out.printf("There are three ways to go, the forest, across the lake, or the hill with the ring of trees%n%n");
+         //ask the player for what way to go
          Select = false;
          String location = "no choice yet";
             do{threeChoices();
@@ -477,9 +488,10 @@ public class TextCrusades{
                      break;
                }    
             }while (Select != true);
-            
+            //if they choose forest, then this storyline happens
             String location1 = "no choice yet";
             if(location == "forest"){
+               //create monster model
                Monster Monster3 = new Monster(names[1], 10, 5, 75);
                System.out.printf("The forest seems to drain light from it as you walk in.%n%n");
                Thread.sleep(2000);
@@ -497,8 +509,10 @@ public class TextCrusades{
                Thread.sleep(2000);
                System.out.println("%n%nThe fight scene begins%n%n%n");
                Thread.sleep(5000);
+               //fight monster
                combatMenu(player1, Monster3);
             }
+            //if they choose lake, then this storyline happens
             else if(location == "lake"){
                System.out.printf("As you walk towards the boat you realize how large the lake is%n%n");
                Thread.sleep(2000);
@@ -515,23 +529,29 @@ public class TextCrusades{
                System.out.printf("Game over");
                System.exit(0);
             }
-            
+            //if they choose hill, then this storyline happens
             else if (location == "hill"){
                System.out.printf("As you walk forward up the hill you hear some enchanting music%n%n");
                Thread.sleep(2000);
                System.out.printf("When you reach the top of the hill you see a potion in a bottle and music seems to be coming from it%n%n");
                Thread.sleep(2000);
+               //create monster model
                Monster Monster2 = new Monster(names[2], 10, 5, 50);
                boolean Select1 = false;
-              // String location1 = "no choice yet";
+               // String location1 = "no choice yet";
+               //ask user if they want to take potion
                do{takePotion();
                   String selection1 = input.next();
                   switch (selection1){
                      case "1":
+                        //if they chose to not take the potion then this storyline happens
                         Select1 = true;
                         location1 = "dontTake";
+                        System.out.printf("You didn't take the potion. So you just continued in your way...");
+                        Thread.sleep(2500);
                         break;
                      case "2":
+                        //if they chose to take the potion, then this storyline happens
                         Select1 = true;
                         location1 = "take";
                         System.out.printf("As you take the potion, everything turns darker and you see%n%n");
@@ -540,7 +560,8 @@ public class TextCrusades{
                         Thread.sleep(2000);
                         System.out.printf("Your going to have to fight this monster for the potion%n%n");
                         Thread.sleep(1000);
-                     combatMenu(player1, Monster2);
+                        //fight monster
+                        combatMenu(player1, Monster2);
                         break;
                      default:
                         System.out.printf("Please select a valid input%n%n");
@@ -548,6 +569,7 @@ public class TextCrusades{
                   }
                }while(Select1 != true);    
           }
+      //continue story
       Thread.sleep(2000);
       System.out.printf("%n%nYou have finally reached the castle%n%n");
       Thread.sleep(2000);
@@ -557,11 +579,14 @@ public class TextCrusades{
       Thread.sleep(1500);
       System.out.printf("You run up to the drawbridge and pull out your weapon to start to fight them%n%n%n");
       Thread.sleep(2000);
+      //create monster models
       Monster Monster4 = new Monster(names[randM.nextInt(7)], 10, 5, 50);
       Monster Monster5 = new Monster(names[randM.nextInt(7)], 10, 5, 50);
+      //fight monster
       combatMenu(player1, Monster4);
       System.out.printf("%nNice job you killed one of the guards, now you have to take on the other%n%n");
       Thread.sleep(2000);
+      //fight monster
       combatMenu(player1, Monster5);
       System.out.printf("%nGood job, now go find the princess in the castle.%n%n");
       Thread.sleep(2500);
@@ -583,7 +608,7 @@ public class TextCrusades{
       Thread.sleep(2500);
       System.out.printf("[Princess]: But how? %n%n");
       Thread.sleep(2500);
-      
+      //ask the user what they will do
       System.out.printf("[%s]: I will ________%n%n",name);
       String whattosay = "neither";
       Select = false;
@@ -611,12 +636,14 @@ public class TextCrusades{
                break;
          }    
       }while (Select != true);
+      //if they user chose option 1, then this storyline happens
       if(whattosay == "1"){
          System.out.printf("[%s]: I'll fight him!%n%n", name);
          Thread.sleep(2500);
          System.out.printf("[BOSS TROLL]: You will what mate?%n%n");
          Thread.sleep(2500);
          System.out.printf("[%s]: oh oh....", name);
+      //if they user chose option 2, then this storyline happens
       }else if(whattosay == "2"){
          System.out.printf("[%s]: I'll challenge him to a game of Uno!%n%n", name);
          Thread.sleep(2500);
@@ -627,6 +654,7 @@ public class TextCrusades{
          System.out.printf("[BOSS TROLL]: NO! YOU CHEATED%n%n");
          Thread.sleep(2500);
          System.out.printf("The monster got mad at you, and now you have to fight him anyway.%n%n");
+      //if they user chose option 3, then this storyline happens
       }else if(whattosay == "3"){
          System.out.printf("[%s]: ax^2 + bx + c = 0%n%n", name);
          Thread.sleep(1500);
@@ -647,6 +675,7 @@ public class TextCrusades{
          System.out.printf("[BOSS TROLL]: You know what. Fight me%n%n");
          Thread.sleep(1000);
          System.out.printf("[%s]: Bet...", name);
+      //if they user chose option 4, then this storyline happens
       }else{
          System.out.printf("[%s]: What do you call Bears without ears?%n%n", name);
          Thread.sleep(2000);
@@ -654,18 +683,22 @@ public class TextCrusades{
          Thread.sleep(2000);
          System.out.printf("[BOSS TROLL]: I'm just dissapointed.%n%n");
       }
+      //either option, the player still fights the monster. 
       Thread.sleep(2500);
       System.out.printf("FINAL BOSS FIGHT%n%n");
-
+      //create BOSS model
       Monster Monster6 = new Monster(names[7],20,5,100);
+      //if the player took the potion from earlier, then they drink it here and regen, then fight the boss
       if(location1 == "take"){
          System.out.println("Oh look, you have a potion from earlier, hurry, take it, it will increase your health");
          player1.heal(50);
          combatMenu(player1, Monster6);
       }
+      //else they'll just fight the boss
       else{
          combatMenu(player1, Monster6);
       }
+      //if they defeat the boss, then story continues and wraps up
       Thread.sleep(2000);
       System.out.printf("%nNow with the Boss deafeated you take the princess back to his father.");
       Thread.sleep(2000);
@@ -681,11 +714,13 @@ public class TextCrusades{
       Thread.sleep(2000);
       System.out.printf("%n%nGame Over. Thanks for playing!");
      }
+     //end of story
       catch(InterruptedException e){
       System.err.println(e.getMessage());
       
    }//end of main
    
+   //everything below here are the menus we called to create the selection screen
    }
    public static void mainMenu(){
       System.out.printf("%n%n                            =========================%n");
@@ -769,7 +804,7 @@ public class TextCrusades{
       System.out.println("               >Teach him the quadratic formula....3                          ");
       System.out.println("               >Tell him the bear joke.............4                          ");
 
-   }
+   }//exept for this, this is the fighting menu, it works out all the logisctics and stats of players and monsters and fighting and all that
    public static void combatMenu(Player p, Monster m){
       Scanner action = new Scanner(System.in);
       Random randBouns = new Random();
@@ -785,12 +820,9 @@ public class TextCrusades{
          System.out.printf("___________________________________________________________________________%n");
          System.out.printf("___________________________________________________________________________%n");
          System.out.printf("%-34s %-33s %-32s%n", "ATTACK(1)", "BLOCK(2)", "HEAL(3)");
-         
-         
          int dealDamage = p.getDamage() + (randBouns.nextInt(11) - 5);
          int takenDamage = m.getDamage() + (randBouns.nextInt(11) - 5);
          boolean progressBattle = false;
-         
          do{
             String battleChoice = action.nextLine();
             switch (battleChoice){
@@ -801,7 +833,6 @@ public class TextCrusades{
                   System.out.printf("the %s attacks you for %d damage!%n", m.getName(), takenDamage);
                   progressBattle = true;
                   break;
-                  
                case "2":
                   p.takeDamage(takenDamage - 5);
                   System.out.printf("You defend from the %s's attack!%n", m.getName());
@@ -809,7 +840,6 @@ public class TextCrusades{
                   System.out.printf("the %s attacks you for %d damage!%n", m.getName(), takenDamage);
                   progressBattle = true;
                   break;
-                  
                case "3":
                   p.heal(5 + (randBouns.nextInt(11) - 5));
                   System.out.printf("You heal yourself%n");
@@ -817,26 +847,21 @@ public class TextCrusades{
                   System.out.printf("But the %s attacked you for %d damage!%n", m.getName(), takenDamage);
                   progressBattle = true;
                   break;
-                  
                default:
                   System.out.printf("Enter correct input...%n");
                   break;
             }
           }while(progressBattle == false);
-          
           System.out.printf("%n%n");
           p.checkAlive();
           m.checkAlive();
-          
       }while((m.getAlive() == true) && (p.getAlive() == true));
-      
       if(m.getAlive() == false && p.getAlive() == true){
          System.out.printf("You defeated the %s", m.getName());
-         
       }
       else{
          System.out.printf("%nYou died.%n Game Over");
          System.exit(0);
       }
    }    
-}
+}//end of code
